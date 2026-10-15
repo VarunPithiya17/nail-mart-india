@@ -122,6 +122,33 @@ footer .big{font:italic 300 clamp(70px,17vw,300px)/.8 Fraunces,serif;letter-spac
 footer .fl{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:40px;opacity:.85}
 .wa{position:fixed;right:18px;bottom:18px;z-index:60;width:58px;height:58px;border-radius:50%;background:#1faa55;display:grid;place-items:center;box-shadow:0 10px 30px #0004}
 .reveal{opacity:0;transform:translateY(40px)}
+/* cursor blob */
+#cur{position:fixed;left:0;top:0;width:14px;height:14px;border-radius:50%;background:var(--lac);z-index:98;pointer-events:none;transform:translate(-50%,-50%);display:grid;place-items:center;color:#fff;font:500 10px "JetBrains Mono",monospace;letter-spacing:.1em;transition:width .3s,height .3s,background .3s}
+#cur.big{width:86px;height:86px}
+@media(hover:none){#cur{display:none}}
+/* scroll-expand film (ref: Pinterest 'luxury product scroll animation' / D&G scent) */
+.film{height:260vh;position:relative}
+.film .stick{position:sticky;top:0;height:100svh;display:grid;place-items:center;overflow:hidden}
+.film .frame{width:26vw;aspect-ratio:9/16;border-radius:999px 999px 30px 30px;overflow:hidden;position:relative;will-change:width,border-radius}
+.film video{width:100%;height:100%;object-fit:cover}
+.film .cap{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;color:#fff;text-align:center;pointer-events:none;mix-blend-mode:difference}
+.film .cap b{font:300 clamp(50px,11vw,190px)/.85 Fraunces,serif;letter-spacing:-.05em}
+/* pinned colour slider (ref: Pinterest 'Skincare — Slider' dribbble) */
+.slide{height:400vh;position:relative}
+.slide .stick{position:sticky;top:0;height:100svh;overflow:hidden;transition:background .6s}
+.track{display:flex;height:100%;align-items:center;gap:6vw;padding:0 20vw;will-change:transform}
+.card{flex:0 0 min(420px,70vw);display:grid;gap:22px;color:#fff}
+.bottle{width:44%;margin:auto;aspect-ratio:3/5;position:relative}
+.bottle .cap2{width:40%;height:30%;margin:0 auto;background:#1a1214;border-radius:10px 10px 4px 4px}
+.bottle .body{height:70%;border-radius:30px;background:var(--c);box-shadow:inset -20px 0 40px #0004,inset 18px 0 30px #fff3,0 40px 60px -20px #0008;position:relative;display:grid;place-items:center}
+.bottle .body span{font:italic 400 22px Fraunces,serif;color:#fffc}
+.card h3{font:300 clamp(36px,4vw,60px)/.95 Fraunces,serif;letter-spacing:-.03em}
+.card p{opacity:.8;line-height:1.5}
+.slide .count{position:absolute;left:clamp(16px,4vw,48px);bottom:30px;color:#fff}
+.slide .head{position:absolute;left:clamp(16px,4vw,48px);top:90px;color:#fff;font:300 clamp(30px,4vw,60px)/1 Fraunces,serif}
+/* drip divider */
+.drip{display:block;width:100%;height:120px;margin-top:-1px}
+.ch{display:inline-block}
 @media(prefers-reduced-motion:reduce){.marq div{animation:none}.reveal{opacity:1;transform:none}}
 </style>
 </head>
@@ -157,6 +184,18 @@ footer .fl{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;ma
 </header>
 
 <div class="marq"><div>Gel Polish <i>✦</i> Cat-Eye Magnets <i>✦</i> Sandwich Tips <i>✦</i> Press-On Boxes <i>✦</i> Pearl Stones <i>✦</i> Cuticle Tools <i>✦</i> PMU Machines <i>✦</i> Gel Polish <i>✦</i> Cat-Eye Magnets <i>✦</i> Sandwich Tips <i>✦</i> Press-On Boxes <i>✦</i> Pearl Stones <i>✦</i> Cuticle Tools <i>✦</i> PMU Machines <i>✦</i></div></div>
+
+<div class="film" id="film"><div class="stick">
+  <div class="frame"><video src="media/h1.mp4" poster="media/p1.jpg" autoplay muted loop playsinline></video></div>
+  <div class="cap"><span class="mono">Scroll to swatch</span><b>36 cat-eyes.<br><i>One counter.</i></b></div>
+</div></div>
+
+<div class="slide" id="slide"><div class="stick" style="background:#7a0a1f">
+  <div class="head">This season on the counter</div>
+  <div class="track" id="track"></div>
+  <div class="count mono"><span id="cn">01</span> / 05 — drag the page, not your feet</div>
+</div></div>
+<svg class="drip" viewBox="0 0 1440 120" preserveAspectRatio="none"><path id="dripP" fill="#7a0a1f" d="M0 0H1440V20C1380 20 1370 40 1360 40 1350 40 1345 20 1300 20H1100C1060 20 1055 90 1040 90 1025 90 1020 20 980 20H700C660 20 655 60 640 60 625 60 620 20 580 20H300C260 20 255 110 240 110 225 110 220 20 180 20H0Z"/></svg>
 
 <section id="shades">
   <div class="wrap">
@@ -233,6 +272,7 @@ footer .fl{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;ma
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
 <script>
 const WA='918802395525';
 // Shade wall — demo shade names; replace with real stock codes
@@ -258,8 +298,32 @@ document.getElementById('f').onsubmit=e=>{e.preventDefault();const f=new FormDat
 const io=new IntersectionObserver(es=>es.forEach(x=>x.isIntersecting?x.target.play().catch(()=>{}):x.target.pause()),{threshold:.3});
 document.querySelectorAll('.reel video').forEach(v=>io.observe(v));
 
+gsap.registerPlugin(ScrollTrigger);
+// colour slider cards
+const S=[['Uomi Cat-Eye','#5b3a7a','36-colour set. Magnetic shimmer that moves with the light.'],['Breezia Gel','#b3122e','Single bottles in every shade family. Salon-grade cure.'],['French Magnet','#2f4a7d','The line that makes cat-eye look expensive.'],['Glass Bead','#c2407a','Rotate the magnet, watch the bead effect bloom.'],['Nude Edit','#a6705f','Skin-tone nudes for bridal and everyday sets.']];
+const track=document.getElementById('track');S.forEach(([n,c,d])=>track.insertAdjacentHTML('beforeend',`<div class="card" data-c="${c}"><div class="bottle"><div class="cap2"></div><div class="body" style="--c:${c}"><span>NM</span></div></div><h3>${n}</h3><p>${d}</p></div>`));
+
+// cursor blob
+const cur=document.createElement('div');cur.id='cur';document.body.appendChild(cur);
+addEventListener('pointermove',e=>gsap.to(cur,{x:e.clientX,y:e.clientY,duration:.35,ease:'power3'}));
+document.querySelectorAll('.reel,.tip,.row,.frame').forEach(el=>{el.addEventListener('mouseenter',()=>{cur.classList.add('big');cur.textContent=el.classList.contains('row')?'ORDER':'VIEW'});el.addEventListener('mouseleave',()=>{cur.classList.remove('big');cur.textContent=''})});
+// magnetic buttons
+document.querySelectorAll('.btn').forEach(b=>{b.addEventListener('mousemove',e=>{const r=b.getBoundingClientRect();gsap.to(b,{x:(e.clientX-r.left-r.width/2)*.3,y:(e.clientY-r.top-r.height/2)*.4,duration:.4})});b.addEventListener('mouseleave',()=>gsap.to(b,{x:0,y:0,duration:.6,ease:'elastic.out(1,.4)'}))});
+// split h2 into words for staggered rise
+document.querySelectorAll('h2.reveal').forEach(h=>{h.classList.remove('reveal');h.innerHTML=h.innerHTML.replace(/(<em[^>]*>.*?<\/em>|[^\s<]+)/g,'<span style="display:inline-block;overflow:hidden;vertical-align:top"><span class="ch">$1</span></span>');gsap.from(h.querySelectorAll('.ch'),{yPercent:110,stagger:.05,duration:1,ease:'expo.out',scrollTrigger:{trigger:h,start:'top 85%'}})});
+
 // motion
 gsap.registerPlugin(ScrollTrigger);
+const lenis=new Lenis();lenis.on('scroll',ScrollTrigger.update);gsap.ticker.add(t=>lenis.raf(t*1000));gsap.ticker.lagSmoothing(0);
+// film: arched tip grows to full-bleed
+gsap.timeline({scrollTrigger:{trigger:'#film',start:'top top',end:'bottom bottom',scrub:true}})
+  .to('#film .frame',{width:'100vw',height:'100svh',aspectRatio:'auto',borderRadius:0,ease:'none'})
+  .from('#film .cap b',{scale:.6,opacity:0,ease:'none'},0);
+// slider: horizontal pin, background takes each polish colour
+const cards=gsap.utils.toArray('.card');
+gsap.to(track,{x:()=>-(track.scrollWidth-innerWidth),ease:'none',scrollTrigger:{trigger:'#slide',start:'top top',end:'bottom bottom',scrub:true,invalidateOnRefresh:true,
+ onUpdate:s=>{const i=Math.min(cards.length-1,Math.round(s.progress*(cards.length-1)));const st=document.querySelector('#slide .stick');const c=cards[i].dataset.c;if(st.dataset.i!=i){st.dataset.i=i;st.style.background=c;document.getElementById('dripP').setAttribute('fill',c);document.getElementById('cn').textContent='0'+(i+1)}}}});
+cards.forEach(c=>gsap.fromTo(c.querySelector('.bottle'),{rotate:-8},{rotate:8,ease:'none',scrollTrigger:{trigger:'#slide',start:'top top',end:'bottom bottom',scrub:true}}));
 const tl=gsap.timeline();
 tl.to('#load span',{y:-30,opacity:0,duration:.5,delay:.5}).to('#load',{clipPath:'inset(0 0 100% 0)',duration:.8,ease:'expo.inOut'}).set('#load',{display:'none'})
   .from('.hero h1 .ln>span',{yPercent:110,stagger:.08,duration:1,ease:'expo.out'},'-=.3')
