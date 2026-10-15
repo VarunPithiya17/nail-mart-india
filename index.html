@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Nail Mart — Nail Art Products, Wholesale · Delhi</title>
+<meta name="description" content="Nail Mart, Mahavir Enclave, New Delhi. Gel polish, cat-eye, tips, tools and machines for salons and nail artists. Wholesale rates, delivery all over India.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..800;1,9..144,300..800&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#f4efe9;--ink:#1a1214;--lac:#b3122e;--lac2:#7a0a1f;--blush:#f1d6d2;--mute:#7d6f70;--line:#1a121422}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:"Inter Tight",system-ui,sans-serif;overflow-x:clip;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.mono{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase}
+.serif{font-family:Fraunces,serif;font-variation-settings:"opsz" 144}
+img,video{display:block;max-width:100%}
+.wrap{max-width:1360px;margin:0 auto;padding:0 clamp(16px,4vw,48px)}
+
+/* loader: a polish brush stroke wipes the screen */
+#load{position:fixed;inset:0;z-index:99;background:var(--lac);display:grid;place-items:center;color:var(--paper)}
+#load span{font:italic 300 clamp(40px,8vw,110px)/1 Fraunces,serif}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:16px clamp(16px,4vw,48px);mix-blend-mode:difference;color:#fff}
+nav .logo{font:600 20px Fraunces,serif;letter-spacing:-.02em}
+nav .links{display:flex;gap:28px}
+nav .links a{opacity:.85}
+@media(max-width:760px){nav .links a:not(.cta){display:none}}
+
+/* HERO */
+.hero{min-height:100svh;position:relative;display:grid;grid-template-columns:1.05fr 1fr;align-items:center;gap:2vw;padding:110px clamp(16px,4vw,48px) 60px;overflow:hidden}
+.hero h1{font:300 clamp(54px,9.4vw,168px)/.86 Fraunces,serif;letter-spacing:-.045em}
+.hero h1 em{font-style:italic;color:var(--lac)}
+.hero h1 .ln{display:block;overflow:hidden;padding-bottom:.06em}
+.hero h1 .ln>span{display:inline-block}
+.hero p.lead{max-width:440px;margin:28px 0 34px;font-size:18px;line-height:1.5;color:#3b3033}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:16px 26px;border-radius:999px;font-weight:600;font-size:15px;transition:transform .3s}
+.btn:hover{transform:translateY(-2px)}
+.btn.p{background:var(--lac);color:#fff}
+.btn.g{border:1px solid var(--ink)}
+.meta{display:flex;gap:28px;margin-top:40px;flex-wrap:wrap}
+.meta b{display:block;font:400 34px Fraunces,serif}
+/* reels arranged like nail tips on a display stick */
+.tips{position:relative;height:min(78vh,760px);display:flex;gap:14px;justify-content:center;align-items:center}
+.tip{position:relative;width:22%;aspect-ratio:9/16;border-radius:999px 999px 26px 26px;overflow:hidden;box-shadow:0 30px 60px -20px #5a0a1a66;background:var(--blush)}
+.tip video{width:100%;height:100%;object-fit:cover}
+.tip::after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,#fff7 0 8%,#fff0 22%);pointer-events:none}
+.tip:nth-child(1){transform:translateY(40px) rotate(-5deg)}
+.tip:nth-child(2){transform:translateY(-30px) rotate(-1.5deg);width:25%}
+.tip:nth-child(3){transform:translateY(20px) rotate(2deg);width:25%}
+.tip:nth-child(4){transform:translateY(-50px) rotate(6deg)}
+.tip .lbl{position:absolute;left:0;right:0;bottom:12px;text-align:center;color:#fff;font-size:10px;z-index:2;text-shadow:0 1px 6px #0008}
+@media(max-width:900px){.hero{grid-template-columns:1fr}.tips{height:auto;margin-top:20px}.tip{width:24%!important}}
+
+/* marquee */
+.marq{border-block:1px solid var(--ink);overflow:hidden;white-space:nowrap;padding:18px 0;background:var(--ink);color:var(--paper)}
+.marq div{display:inline-block;animation:mq 38s linear infinite;font:italic 300 clamp(28px,4vw,56px) Fraunces,serif}
+.marq i{color:var(--lac);font-style:normal;margin:0 .5em}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+section{padding:clamp(80px,12vw,160px) 0}
+.eyebrow{display:flex;justify-content:space-between;border-top:1px solid var(--line);padding-top:14px;margin-bottom:46px;color:var(--mute)}
+h2{font:300 clamp(42px,6.4vw,104px)/.92 Fraunces,serif;letter-spacing:-.04em;max-width:15ch}
+h2 em{color:var(--lac)}
+
+/* MAGNET SHADE WALL — move cursor, the cat-eye line follows like a real magnet */
+.wall{display:grid;grid-template-columns:repeat(12,1fr);gap:10px;margin-top:56px}
+.sw{aspect-ratio:3/4.4;border-radius:999px 999px 14px 14px;position:relative;cursor:pointer;background:var(--c);overflow:hidden;transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.sw::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 30% 80% at var(--mx,50%) 50%,#ffffffcc,#ffffff33 35%,transparent 60%);mix-blend-mode:overlay;opacity:var(--cat,0)}
+.sw::after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,#fff6 0 10%,transparent 25%)}
+.sw:hover{transform:translateY(-8px)}
+.sw.on{outline:2px solid var(--ink);outline-offset:3px}
+@media(max-width:760px){.wall{grid-template-columns:repeat(6,1fr)}}
+.wallbar{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-top:28px}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{border:1px solid var(--line);border-radius:999px;padding:9px 16px;font-size:13px;cursor:pointer;background:none;font-family:inherit}
+.chip.on{background:var(--ink);color:var(--paper)}
+#picked{color:var(--mute);font-size:14px}
+
+/* CATEGORIES — index list with cursor photo peek */
+.idx{margin-top:60px;border-top:1px solid var(--ink)}
+.row{display:grid;grid-template-columns:70px 1fr auto;align-items:baseline;padding:26px 0;border-bottom:1px solid var(--line);position:relative;transition:padding .4s}
+.row h3{font:300 clamp(30px,4.4vw,64px)/1 Fraunces,serif;letter-spacing:-.03em;transition:color .3s,transform .4s}
+.row:hover h3{color:var(--lac);transform:translateX(14px)}
+.row small{color:var(--mute);font-size:14px;max-width:340px;text-align:right}
+@media(max-width:760px){.row{grid-template-columns:40px 1fr}.row small{grid-column:2;text-align:left;margin-top:8px}}
+#peek{position:fixed;width:220px;aspect-ratio:3/4;border-radius:120px 120px 16px 16px;overflow:hidden;pointer-events:none;z-index:40;opacity:0;transform:translate(-50%,-50%) scale(.8);transition:opacity .25s,transform .25s;box-shadow:0 30px 60px -20px #0006}
+#peek img{width:100%;height:100%;object-fit:cover}
+#peek.on{opacity:1;transform:translate(-50%,-50%) scale(1)}
+
+/* REELS strip */
+.dark{background:var(--ink);color:var(--paper)}
+.dark .eyebrow{border-color:#fff2;color:#fff8}
+.reels{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:56px}
+.reel{border-radius:18px;overflow:hidden;aspect-ratio:9/16;position:relative;background:#2a2023}
+.reel video{width:100%;height:100%;object-fit:cover}
+.reel span{position:absolute;left:14px;bottom:14px;right:14px;font-size:14px}
+@media(max-width:760px){.reels{grid-template-columns:repeat(2,1fr)}}
+
+/* WHY */
+.why{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--ink);margin-top:60px}
+.why div{padding:30px 24px 30px 0;border-right:1px solid var(--line)}
+.why div:last-child{border:0}
+.why b{font:400 54px/1 Fraunces,serif;color:var(--lac);display:block;margin-bottom:18px}
+.why p{color:#3b3033;line-height:1.5;font-size:15px}
+@media(max-width:760px){.why{grid-template-columns:1fr 1fr}.why div{border-bottom:1px solid var(--line);padding-left:0}}
+
+/* ORDER */
+.order{display:grid;grid-template-columns:1fr 1fr;gap:5vw;align-items:start}
+form{display:grid;gap:14px}
+label{display:grid;gap:6px;font-size:13px;color:var(--mute)}
+input,select,textarea{font:inherit;font-size:16px;color:var(--ink);background:transparent;border:0;border-bottom:1px solid var(--ink);padding:12px 0;outline:none}
+input:focus,textarea:focus,select:focus{border-color:var(--lac)}
+@media(max-width:860px){.order{grid-template-columns:1fr}}
+.map{border-radius:18px;overflow:hidden;filter:grayscale(.6) contrast(1.05);margin-top:30px;border:1px solid var(--line)}
+.map iframe{width:100%;height:280px;border:0;display:block}
+
+footer{background:var(--lac);color:#fff;padding:80px 0 30px;overflow:hidden}
+footer .big{font:italic 300 clamp(70px,17vw,300px)/.8 Fraunces,serif;letter-spacing:-.05em;white-space:nowrap}
+footer .fl{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:40px;opacity:.85}
+.wa{position:fixed;right:18px;bottom:18px;z-index:60;width:58px;height:58px;border-radius:50%;background:#1faa55;display:grid;place-items:center;box-shadow:0 10px 30px #0004}
+.reveal{opacity:0;transform:translateY(40px)}
+@media(prefers-reduced-motion:reduce){.marq div{animation:none}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div id="load"><span>Nail&nbsp;Mart</span></div>
+
+<nav>
+  <a href="#" class="logo">Nail Mart<sup class="mono" style="font-size:8px"> DEL</sup></a>
+  <div class="links mono"><a href="#shades">Shades</a><a href="#range">Range</a><a href="#reels">Reels</a><a href="#order" class="cta">Order ↗</a></div>
+</nav>
+
+<header class="hero">
+  <div>
+    <p class="mono" style="color:var(--lac);margin-bottom:26px">● Wholesale nail art supplies · New Delhi · Ships all-India</p>
+    <h1><span class="ln"><span>Every</span></span><span class="ln"><span><em>shade</em> your</span></span><span class="ln"><span>salon needs.</span></span></h1>
+    <p class="lead">Gel polish, cat-eye magnets, tips, tools and machines — stocked in Mahavir Enclave and dispatched to nail artists across India at wholesale rates.</p>
+    <div class="btns">
+      <a class="btn p" href="#order">Get the wholesale list →</a>
+      <a class="btn g" href="#shades">Browse shades</a>
+    </div>
+    <div class="meta">
+      <div><b>5.0★</b><span class="mono">Google · 25 reviews</span></div>
+      <div><b>689+</b><span class="mono">Products posted</span></div>
+      <div><b>All‑India</b><span class="mono">Delivery</span></div>
+    </div>
+  </div>
+  <div class="tips">
+    <div class="tip"><video src="media/h1.mp4" poster="media/p1.jpg" autoplay muted loop playsinline></video><span class="lbl mono">Cat-eye 30-A</span></div>
+    <div class="tip"><video src="media/h4.mp4" poster="media/p4.jpg" autoplay muted loop playsinline></video><span class="lbl mono">Breezia gel</span></div>
+    <div class="tip"><video src="media/h2.mp4" poster="media/p2.jpg" autoplay muted loop playsinline></video><span class="lbl mono">Glass bead</span></div>
+    <div class="tip"><video src="media/h3.mp4" poster="media/p3.jpg" autoplay muted loop playsinline></video><span class="lbl mono">Sandwich tips</span></div>
+  </div>
+</header>
+
+<div class="marq"><div>Gel Polish <i>✦</i> Cat-Eye Magnets <i>✦</i> Sandwich Tips <i>✦</i> Press-On Boxes <i>✦</i> Pearl Stones <i>✦</i> Cuticle Tools <i>✦</i> PMU Machines <i>✦</i> Gel Polish <i>✦</i> Cat-Eye Magnets <i>✦</i> Sandwich Tips <i>✦</i> Press-On Boxes <i>✦</i> Pearl Stones <i>✦</i> Cuticle Tools <i>✦</i> PMU Machines <i>✦</i></div></div>
+
+<section id="shades">
+  <div class="wrap">
+    <div class="eyebrow mono"><span>01 — The shade wall</span><span>Move your cursor: it's a magnet</span></div>
+    <h2 class="reveal">Hold a <em>magnet</em> over the wall.</h2>
+    <div class="wallbar">
+      <div class="chips" id="fam"></div>
+      <span id="picked">Tap shades to add them to your order list.</span>
+    </div>
+    <div class="wall" id="wall"></div>
+  </div>
+</section>
+
+<section id="range" style="padding-top:0">
+  <div class="wrap">
+    <div class="eyebrow mono"><span>02 — The range</span><span>Wholesale &amp; single pieces</span></div>
+    <h2 class="reveal">One counter for the <em>whole</em> nail bar.</h2>
+    <div class="idx" id="idx"></div>
+  </div>
+</section>
+<div id="peek"><img alt=""></div>
+
+<section id="reels" class="dark">
+  <div class="wrap">
+    <div class="eyebrow mono"><span>03 — Straight from the counter</span><a href="https://www.instagram.com/nail_mart_india/" target="_blank" rel="noopener">@nail_mart_india ↗</a></div>
+    <h2 class="reveal">See it <em style="color:#ff6b80">swatched</em>, not just listed.</h2>
+    <div class="reels">
+      <div class="reel"><video src="media/h1.mp4" poster="media/p1.jpg" muted loop playsinline></video><span>Uomi cat-eye · 36 colours</span></div>
+      <div class="reel"><video src="media/h2.mp4" poster="media/p2.jpg" muted loop playsinline></video><span>Glass bead effect</span></div>
+      <div class="reel"><video src="media/h3.mp4" poster="media/p3.jpg" muted loop playsinline></video><span>Sandwich nail tip shape</span></div>
+      <div class="reel"><video src="media/h4.mp4" poster="media/p4.jpg" muted loop playsinline></video><span>Breezia single polish</span></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow mono"><span>04 — Why salons restock here</span><span>Delhi · since day one</span></div>
+    <h2 class="reveal">Priced for <em>artists</em>, not shelves.</h2>
+    <div class="why">
+      <div><b>01</b><p>Wholesale rates for salons, academies and resellers — single pieces too.</p></div>
+      <div><b>02</b><p>Swatch videos for new arrivals before you order, so the colour is never a guess.</p></div>
+      <div><b>03</b><p>Dispatch all over India. Delhi NCR pick-up from Mahavir Enclave.</p></div>
+      <div><b>04</b><p>Order on WhatsApp. One message, a real person, a confirmed price.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="order" style="padding-top:0">
+  <div class="wrap order">
+    <div>
+      <div class="eyebrow mono"><span>05 — Order</span><span>Reply within the hour</span></div>
+      <h2 class="reveal">Send your list. Get the <em>rate</em>.</h2>
+      <p style="margin-top:24px;color:#3b3033;line-height:1.6;max-width:420px">RZ-7 &amp; 8B, Gurudwara Road, Mahavir Enclave, New Delhi 110045<br><a href="tel:+918802395525" style="color:var(--lac);font-weight:600">+91 88023 95525</a></p>
+      <div class="map"><iframe loading="lazy" title="Map" src="https://www.google.com/maps?q=Nail+Mart+Mahavir+Enclave+New+Delhi+110045&output=embed"></iframe></div>
+    </div>
+    <form id="f">
+      <label>Your name / salon<input name="n" required></label>
+      <label>City<input name="c" required></label>
+      <label>I am a<select name="t"><option>Salon / nail studio</option><option>Nail artist</option><option>Academy</option><option>Reseller</option></select></label>
+      <label>What do you need?<textarea name="m" rows="4" placeholder="e.g. 36-colour cat-eye set, 2 boxes sandwich tips"></textarea></label>
+      <button class="btn p" style="border:0;cursor:pointer;justify-self:start">Send on WhatsApp →</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="big">Nail Mart</div>
+    <div class="fl mono"><span>© Nail Mart · Nail art products · New Delhi</span><span>+91 88023 95525</span><a href="https://www.instagram.com/nail_mart_india/">Instagram ↗</a></div>
+  </div>
+</footer>
+<a class="wa" href="https://wa.me/918802395525" aria-label="WhatsApp"><svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.2.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l2 .9c.3.2.5.2.5.4.1.1.1.7-.1 1.3z"/></svg></a>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+const WA='918802395525';
+// Shade wall — demo shade names; replace with real stock codes
+const FAM={Nudes:['#e8c4b4','#d9a99a','#c99282','#b67b6c','#a6705f','#8f5a4c'],Reds:['#b3122e','#8e0f22','#d1263a','#6d0a18','#c2402f','#9a1b2b'],Pinks:['#f2a7b8','#e7799a','#d4527a','#f6c6d2','#c23c6b','#ff8fab'],Darks:['#3a1c25','#26151c','#4b2a3a','#1d1b2b','#3f2b23','#2b0f17'],'Cat-eye':['#5b3a7a','#2f4a7d','#7a1f3d','#355e4c','#6b5a3c','#40324f']};
+const wall=document.getElementById('wall'),fam=document.getElementById('fam'),picked=document.getElementById('picked');let sel=new Set();
+function draw(f){wall.innerHTML='';const list=f==='All'?Object.entries(FAM).flatMap(([k,v])=>v.map((c,i)=>[k,c,i])):FAM[f].map((c,i)=>[f,c,i]);
+ list.forEach(([k,c,i])=>{const d=document.createElement('div');d.className='sw';d.style.setProperty('--c',c);d.style.setProperty('--cat',k==='Cat-eye'?1:.35);const id=k.slice(0,2).toUpperCase()+'-'+String(i+1).padStart(2,'0');d.title=id;d.dataset.id=id;if(sel.has(id))d.classList.add('on');
+ d.onclick=()=>{sel.has(id)?sel.delete(id):sel.add(id);d.classList.toggle('on');picked.textContent=sel.size?`${sel.size} shade${sel.size>1?'s':''} picked: ${[...sel].join(', ')}`:'Tap shades to add them to your order list.'};wall.appendChild(d)})}
+['All',...Object.keys(FAM)].forEach((f,i)=>{const b=document.createElement('button');b.className='chip'+(i?'':' on');b.textContent=f;b.onclick=()=>{fam.querySelectorAll('.chip').forEach(x=>x.classList.remove('on'));b.classList.add('on');draw(f)};fam.appendChild(b)});draw('All');
+// magnet: the cat-eye band follows the pointer across the whole wall
+wall.addEventListener('pointermove',e=>{for(const s of wall.children){const r=s.getBoundingClientRect();s.style.setProperty('--mx',((e.clientX-r.left)/r.width*100)+'%')}});
+
+// Range index with photo peek
+const R=[['Gel polish','Breezia, Uomi & more — single bottles and full sets','media/p4.jpg'],['Cat-eye & magnets','36-colour cat-eye sets, French magnets, glass bead effect','media/p1.jpg'],['Tips & press-ons','Sandwich tips, soft-gel tips, press-on boxes','media/i3.jpg'],['Stones & charms','Gold and silver pearl stones, 3D decor','media/p2.jpg'],['Tools','Cuticle pushers, files, brushes, dotting tools','media/i2.jpg'],['Machines','Microblading, eyebrow, tattoo & lip-shading machines','media/i1.jpg']];
+const idx=document.getElementById('idx'),peek=document.getElementById('peek'),pi=peek.querySelector('img');
+R.forEach(([t,d,img],i)=>{const a=document.createElement('a');a.className='row';a.href='#order';a.innerHTML=`<span class="mono">0${i+1}</span><h3>${t}</h3><small>${d}</small>`;a.onmouseenter=()=>{pi.src=img;peek.classList.add('on')};a.onmouseleave=()=>peek.classList.remove('on');a.onclick=()=>{document.querySelector('[name=m]').value=t+': '};idx.appendChild(a)});
+addEventListener('pointermove',e=>{peek.style.left=e.clientX+'px';peek.style.top=e.clientY+'px'});
+
+// order -> WhatsApp
+document.getElementById('f').onsubmit=e=>{e.preventDefault();const f=new FormData(e.target);const msg=`Hi Nail Mart! I'm ${f.get('n')} (${f.get('t')}, ${f.get('c')}).\n${f.get('m')}${sel.size?'\nShades: '+[...sel].join(', '):''}\nPlease share wholesale rates.`;open(`https://wa.me/${WA}?text=${encodeURIComponent(msg)}`,'_blank')};
+
+// play reels only when visible
+const io=new IntersectionObserver(es=>es.forEach(x=>x.isIntersecting?x.target.play().catch(()=>{}):x.target.pause()),{threshold:.3});
+document.querySelectorAll('.reel video').forEach(v=>io.observe(v));
+
+// motion
+gsap.registerPlugin(ScrollTrigger);
+const tl=gsap.timeline();
+tl.to('#load span',{y:-30,opacity:0,duration:.5,delay:.5}).to('#load',{clipPath:'inset(0 0 100% 0)',duration:.8,ease:'expo.inOut'}).set('#load',{display:'none'})
+  .from('.hero h1 .ln>span',{yPercent:110,stagger:.08,duration:1,ease:'expo.out'},'-=.3')
+  .from('.tip',{y:200,opacity:0,stagger:.08,duration:1.1,ease:'expo.out'},'<');
+gsap.utils.toArray('.reveal').forEach(el=>gsap.to(el,{opacity:1,y:0,duration:1,ease:'expo.out',scrollTrigger:{trigger:el,start:'top 85%'}}));
+gsap.to('.tips',{yPercent:-12,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
+gsap.from('.sw',{y:60,opacity:0,stagger:.015,duration:.8,ease:'expo.out',scrollTrigger:{trigger:'#wall',start:'top 80%'}});
+</script>
+</body>
+</html>
