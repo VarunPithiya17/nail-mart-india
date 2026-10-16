@@ -62,7 +62,7 @@ $('#chips').innerHTML=['All',...CATS].map(c=>`<button class="chip" data-c="${esc
 function render(){const t=q.toLowerCase(),f=P.filter(p=>(cat==='All'||p.c===cat)&&(!t||(p.n+' '+p.b+' '+p.c).toLowerCase().includes(t)));
  $('#grid').innerHTML=f.length?f.slice(0,shown).map(card).join(''):'<p class="empty">Nothing matches — WhatsApp us, we probably still have it.</p>';
  $('#count').textContent=f.length+' products'+(cat!=='All'?' in '+cat:'');$('#more').style.display=f.length>shown?'':'none';sync();
- $$('.chip').forEach(x=>{const on=x.dataset.c===cat;x.classList.toggle('on',on);if(on)x.parentNode.scrollTo({left:x.offsetLeft-x.parentNode.offsetLeft-16,behavior:'smooth'})});
+ $$('.chip').forEach(x=>{const on=x.dataset.c===cat;x.classList.toggle('on',on);if(on)x.parentNode.scrollTo({left:x.offsetLeft-x.parentNode.offsetLeft-16})});
  history.replaceState(null,'',location.pathname+(cat!=='All'||q?'?'+new URLSearchParams({...(cat!=='All'&&{c:cat}),...(q&&{q})}):''))}
 $('#chips').onclick=e=>{const b=e.target.closest('.chip');if(b){cat=b.dataset.c;shown=24;render()}};
 let tq;$('#q').oninput=e=>{clearTimeout(tq);tq=setTimeout(()=>{q=e.target.value.trim();shown=24;render()},150)};
