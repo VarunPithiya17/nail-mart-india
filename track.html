@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Track order — Nail Mart · Nail Art Products Delhi</title>
+<meta name="description" content="Track your Nail Mart order enquiry by reference number.">
+<meta name="theme-color" content="#b3122e">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Inter+Tight:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body data-page="track">
+<header class="phead" data-float><div class="wrap"><p class="mono" style="color:var(--lac);margin-bottom:14px;position:relative;z-index:2">Track order</p><h1>Where's my <em>order?</em></h1><p>Enter the reference from your WhatsApp message (like NM-261016-AB12).</p></div><span class="fl" data-z="1" data-r="-12" style="right:6%;top:14%;width:clamp(80px,10vw,150px)"><img src="media/f/193.webp" alt=""></span><span class="fl" data-z="1.4" data-r="10" style="right:24%;top:54%;width:clamp(70px,8vw,120px)"><img src="media/f/69.webp" alt=""></span><span class="fl" data-z=".7" data-r="16" style="right:38%;top:10%;width:clamp(50px,6vw,90px)"><img src="media/f/171.webp" alt=""></span></header>
+
+<main class="wrap" style="padding:40px 16px 90px">
+ <form id="tf" style="display:flex;gap:10px;flex-wrap:wrap;max-width:620px"><label class="field" style="flex:1;min-width:220px">Order reference<input id="tr" placeholder="NM-YYMMDD-XXXX" autocomplete="off" style="text-transform:uppercase"></label><button class="btn k" style="align-self:end">Track →</button></form>
+ <div id="tout" aria-live="polite" style="margin-top:34px"></div>
+ <h2 style="font-size:clamp(28px,4vw,48px);margin:60px 0 18px">Orders from this device</h2><div id="mine"></div>
+</main>
+<style>
+.ord{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:22px;margin-bottom:14px}
+.ord h3{font:400 26px Fraunces,Georgia,serif}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);margin:24px 0 18px;position:relative}
+.steps:before{content:"";position:absolute;left:12%;right:12%;top:15px;height:3px;background:var(--line)}
+.steps .bar{position:absolute;left:12%;top:15px;height:3px;background:var(--lac);width:0;transition:width 1.2s cubic-bezier(.2,.8,.2,1)}
+.st{text-align:center;font-size:12.5px;position:relative;color:var(--mute)}
+.st i{display:grid;place-items:center;width:33px;height:33px;margin:0 auto 8px;border-radius:50%;background:var(--paper);border:2px solid var(--line);font-style:normal;font-weight:700;transition:.4s}
+.st.on{color:var(--ink);font-weight:600}.st.on i{background:var(--lac);border-color:var(--lac);color:#fff}
+.oi{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 16px}.oi img{width:48px;height:48px;border-radius:10px;object-fit:cover}
+</style>
+<script src="products.js"></script>
+<script src="js/site.js"></script>
+<script>
+const S=['Enquiry sent','Rate confirmed','Packed','Dispatched'];
+// ponytail: status is estimated on-device from order age; swap for the shop's real status feed when they have one
+const stage=o=>{const h=(Date.now()-o.t)/36e5;return h<2?0:h<24?1:h<48?2:3};
+const askS=r=>`https://wa.me/${WA}?text=${encodeURIComponent('Hi Nail Mart! What is the status of my order '+r+'?')}`;
+const view=o=>{const s=stage(o);return `<div class="ord"><p class="mono" style="color:var(--mute)">${new Date(o.t).toLocaleString('en-IN',{dateStyle:'medium',timeStyle:'short'})}</p><h3>${o.ref}</h3>
+<div class="steps"><div class="bar" data-w="${s/3*76}%"></div>${S.map((x,i)=>`<div class="st${i<=s?' on':''}"><i>${i<=s?'✓':i+1}</i>${x}</div>`).join('')}</div>
+<div class="oi">${o.items.slice(0,8).map(([id])=>P[id]?`<a href="product.html?id=${id}"><img src="${P[id].i}" alt="${esc(P[id].n)}"></a>`:'').join('')}</div>
+<p style="font-size:14px;color:var(--mute);margin-bottom:14px">${o.items.length} item(s) · estimated status, confirmed by the shop on WhatsApp</p>
+<a class="btn w" target="_blank" rel="noopener" href="${askS(o.ref)}">Ask status on WhatsApp →</a></div>`};
+const grow=()=>setTimeout(()=>$$('.steps .bar').forEach(b=>b.style.width=b.dataset.w),80);
+function find(r){r=r.trim().toUpperCase();if(!r)return;const o=getOrders().find(x=>x.ref===r);
+ $('#tout').innerHTML=o?view(o):`<div class="ord"><h3>${esc(r)}</h3><p style="margin:10px 0 16px;color:#3b3033">This order was placed on another phone. Message us and we'll share the live status.</p><a class="btn w" target="_blank" rel="noopener" href="${askS(r)}">Ask on WhatsApp →</a></div>`;grow()}
+$('#tf').onsubmit=e=>{e.preventDefault();find($('#tr').value)};
+const mine=getOrders();$('#mine').innerHTML=mine.length?mine.map(view).join(''):'<p style="color:var(--mute)">No orders yet. <a href="shop.html" style="color:var(--lac);font-weight:700">Start shopping →</a></p>';
+const ref=new URLSearchParams(location.search).get('ref');if(ref){$('#tr').value=ref;find(ref);toast('Order '+ref+' sent on WhatsApp')}grow();
+</script>
+</body>
+</html>

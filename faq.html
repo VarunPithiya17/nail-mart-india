@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>FAQ — Nail Mart · Nail Art Products Delhi</title>
+<meta name="description" content="Answers on ordering, payment, delivery, returns and wholesale at Nail Mart, New Delhi.">
+<meta name="theme-color" content="#b3122e">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Inter+Tight:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body data-page="faq">
+<header class="phead" data-float><div class="wrap"><p class="mono" style="color:var(--lac);margin-bottom:14px;position:relative;z-index:2">Help</p><h1>Questions, <em>answered.</em></h1><p>Can't find it? Search above or message us on WhatsApp.</p></div><span class="fl" data-z="1" data-r="-12" style="right:6%;top:14%;width:clamp(80px,10vw,150px)"><img src="media/f/57.webp" alt=""></span><span class="fl" data-z="1.4" data-r="10" style="right:24%;top:54%;width:clamp(70px,8vw,120px)"><img src="media/f/92.webp" alt=""></span><span class="fl" data-z=".7" data-r="16" style="right:38%;top:10%;width:clamp(50px,6vw,90px)"><img src="media/f/3.webp" alt=""></span></header>
+
+<main class="wrap" style="padding:50px 16px 90px;max-width:860px">
+ <label class="field" style="margin-bottom:24px">Search the FAQ<input id="fq" type="search" placeholder="delivery, payment, returns…"></label>
+ <div id="faq"></div>
+</main>
+<style>
+details{border-bottom:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:16px;padding:20px 0;font:400 clamp(19px,2.4vw,24px) Fraunces,Georgia,serif}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";color:var(--lac);transition:transform .3s;font-size:28px;line-height:1}
+details[open] summary:after{transform:rotate(45deg)}
+details p{padding:0 0 20px;color:#3b3033;line-height:1.65;max-width:680px;animation:pin .4s}
+</style>
+<script src="products.js"></script>
+<script src="js/site.js"></script>
+<script>
+// ponytail: return/delivery/payment answers are demo copy — confirm with the shop
+const F=[['How do I place an order?','Add products to your list with the + Add button, then tap “Send list on WhatsApp”. You get an order reference, and we reply with rates and stock.'],
+['Why are there no prices on the site?','Gel and tool prices move with stock and quantity. We confirm the current wholesale rate for your exact list on WhatsApp.'],
+['Is there a minimum order?','No. Single pieces are fine. Bigger orders get better rates, see the Wholesale page.'],
+['How do I pay?','UPI or bank transfer once your rate is confirmed. Cash at the counter.'],
+['Do you deliver outside Delhi?','Yes, all over India by courier. Delhi NCR orders can also be picked up from Mahavir Enclave.'],
+['How long does delivery take?','Usually 1–2 days in Delhi NCR and 3–6 days elsewhere after dispatch.'],
+['How do I track my order?','Open Track order and enter the reference from your WhatsApp message (NM-…). Orders placed on this phone show up there automatically.'],
+['Can I return a product?','Products with a manufacturing defect can be exchanged. Message us within 48 hours of delivery with a photo or video.'],
+['Can I see the colour before buying?','Yes. New arrivals are swatched on video on our Instagram @nail_mart_india, and we can send swatches on WhatsApp.'],
+['Do you supply academies?','Yes, student kits in bulk, packed per student. Use the quote form on the Wholesale page.']];
+const r=t=>$('#faq').innerHTML=F.filter(([q,a])=>(q+a).toLowerCase().includes(t)).map(([q,a])=>`<details><summary>${q}</summary><p>${a}</p></details>`).join('')||'<p style="color:var(--mute)">No match. Ask us on WhatsApp.</p>';
+r('');$('#fq').oninput=e=>r(e.target.value.toLowerCase());
+</script>
+</body>
+</html>

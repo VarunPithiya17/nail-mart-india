@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Wholesale — Nail Mart · Nail Art Products Delhi</title>
+<meta name="description" content="Wholesale nail art supplies for salons, academies and resellers. Bulk rates, student kits, all-India dispatch from Nail Mart Delhi.">
+<meta name="theme-color" content="#b3122e">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Inter+Tight:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body data-page="wholesale">
+<header class="phead" data-float><div class="wrap"><p class="mono" style="color:var(--lac);margin-bottom:14px;position:relative;z-index:2">Wholesale &amp; bulk</p><h1>Stock your studio <em>for less.</em></h1><p>Tiered rates for salons, academies and resellers. Tell us what you need and we'll quote fast.</p></div><span class="fl" data-z="1" data-r="-12" style="right:6%;top:14%;width:clamp(80px,10vw,150px)"><img src="media/f/11.webp" alt=""></span><span class="fl" data-z="1.4" data-r="10" style="right:24%;top:54%;width:clamp(70px,8vw,120px)"><img src="media/f/6.webp" alt=""></span><span class="fl" data-z=".7" data-r="16" style="right:38%;top:10%;width:clamp(50px,6vw,90px)"><img src="media/f/117.webp" alt=""></span></header>
+
+<section><div class="wrap">
+ <div class="eyebrow mono"><span>Who it's for</span><span>Rates on WhatsApp</span></div>
+ <div class="cards3">
+  <div class="box rv"><b class="n">01</b><h3>Salons &amp; studios</h3><p>Monthly restock of gels, tips and consumables. Keep a standing list and reorder in one message.</p></div>
+  <div class="box rv"><b class="n">02</b><h3>Academies</h3><p>Student kits in bulk: lamp, gels, tips, files and brushes, packed per student.</p></div>
+  <div class="box rv"><b class="n">03</b><h3>Resellers</h3><p>Carton quantities on fast movers like cat-eye sets and sandwich tips.</p></div>
+ </div>
+</div></section>
+<section style="padding-top:0"><div class="wrap" style="display:grid;gap:40px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))">
+ <div><h2 class="rv">Get a <em>bulk quote.</em></h2><p style="margin-top:16px;line-height:1.6;color:#3b3033">Fill this in and it opens WhatsApp with everything we need. You'll get an order reference to track.</p></div>
+ <form id="wf" class="box" style="display:grid;gap:14px">
+  <label class="field">Business name<input name="n" required autocomplete="organization"></label>
+  <label class="field">City<input name="c" required autocomplete="address-level2"></label>
+  <label class="field">Type<select name="t"><option>Salon / studio</option><option>Academy</option><option>Reseller</option><option>Freelance artist</option></select></label>
+  <label class="field">Monthly budget<select name="b"><option>Under ₹10,000</option><option>₹10,000 – ₹50,000</option><option>₹50,000+</option></select></label>
+  <label class="field">What do you need?<textarea name="m" rows="3" placeholder="e.g. 20 student kits, 50 cat-eye sets"></textarea></label>
+  <p id="wl" style="font-size:13px;color:var(--mute)"></p>
+  <button class="btn w">Get quote on WhatsApp →</button>
+ </form>
+</div></section>
+<script src="products.js"></script>
+<script src="js/site.js"></script>
+<script>
+const L=()=>$('#wl').textContent=list.length?'+ your list of '+list.length+' product(s) will be attached':'';L();document.addEventListener('listchange',L);
+$('#wf').onsubmit=e=>{e.preventDefault();const f=new FormData(e.target);const r=placeOrder(list.map(id=>[id,1]),`I'm ${f.get('n')} (${f.get('t')}, ${f.get('c')}), budget ${f.get('b')}. ${f.get('m')}`);list=[];sync();setTimeout(()=>location.href='track.html?ref='+r,400)};
+</script>
+</body>
+</html>
