@@ -4,222 +4,151 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Nail Mart — Nail Art Products, Wholesale · Delhi</title>
-<meta name="description" content="Nail Mart, Mahavir Enclave, New Delhi. 200+ nail art products — gel polish, cat-eye, builder gels, tips, stickers, tools, drills and lamps. Wholesale rates, delivery all over India.">
+<meta name="description" content="Nail Mart, Mahavir Enclave, New Delhi. 200+ nail art products — gel polish, cat-eye, builder gels, tips, stickers, tools, drills and lamps. Wholesale rates on WhatsApp, delivery all over India.">
 <meta name="theme-color" content="#b3122e">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="image" href="media/p1.jpg">
-<!-- non-blocking fonts: page renders with system fonts first -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Inter+Tight:wght@400;500;600&display=swap" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Inter+Tight:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="css/site.css">
 <style>
-:root{--paper:#f6f1eb;--card:#fff;--ink:#1a1214;--lac:#b3122e;--lac2:#7a0a1f;--blush:#f3dcd8;--mute:#75686a;--line:#1a12141f;--wa:#1faa55}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{background:var(--paper);color:var(--ink);font-family:"Inter Tight",system-ui,-apple-system,"Segoe UI",sans-serif;overflow-x:clip;-webkit-font-smoothing:antialiased;padding-bottom:76px}
-@media(min-width:900px){body{padding-bottom:0}}
-a{color:inherit;text-decoration:none}
-button{font:inherit;color:inherit;cursor:pointer;background:none;border:0}
-img,video{display:block;max-width:100%}
-.serif{font-family:Fraunces,Georgia,serif}
-.mono{font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:600}
-.wrap{max-width:1320px;margin:0 auto;padding:0 16px}
-@media(min-width:760px){.wrap{padding:0 40px}}
+/* HERO: headline in the middle, real products floating around it */
+.hero{position:relative;min-height:calc(100svh - 96px);display:grid;place-items:center;text-align:center;overflow:hidden;padding:60px 16px}
+.hero .copy{position:relative;z-index:3;max-width:900px}
+.hero h1{font-size:clamp(52px,11vw,180px);line-height:.86}
+.hero p.lead{max-width:470px;margin:22px auto 28px;font-size:17px;line-height:1.5;color:#3b3033}
+.hero .btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.hero .glow{position:absolute;width:70vmax;height:70vmax;border-radius:50%;background:radial-gradient(circle,#f3c9c9 0,#f6f1eb00 62%);left:50%;top:50%;transform:translate(-50%,-50%);z-index:0}
+.hero .fl{z-index:1}
+.hero .fl.front{z-index:4}
+@media(max-width:700px){.hero .fl.dsk{display:none}}
+.scrollcue{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);z-index:3;color:var(--mute)}
 
-/* nav */
-nav{position:sticky;top:0;z-index:50;background:#f6f1ebee;backdrop-filter:saturate(1.4) blur(10px);-webkit-backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line)}
-nav .wrap{display:flex;justify-content:space-between;align-items:center;height:60px}
-.logo{font:600 21px Fraunces,Georgia,serif;letter-spacing:-.02em}
-.logo i{color:var(--lac);font-style:normal}
-.nl{display:none;gap:26px;font-size:14px;font-weight:500}
-.nl a:hover{color:var(--lac)}
-@media(min-width:900px){.nl{display:flex}}
-.listbtn{display:flex;align-items:center;gap:8px;background:var(--ink);color:#fff;border-radius:999px;padding:9px 16px;font-size:14px;font-weight:600}
-.listbtn b{background:var(--lac);border-radius:999px;min-width:22px;height:22px;display:grid;place-items:center;font-size:12px}
-
-/* hero */
-.hero{display:grid;gap:28px;padding:28px 0 44px}
-@media(min-width:900px){.hero{grid-template-columns:1.05fr 1fr;align-items:center;min-height:calc(100svh - 60px);padding:40px 0}}
-.kick{color:var(--lac);margin-bottom:16px}
-h1{font:300 clamp(46px,9vw,140px)/.9 Fraunces,Georgia,serif;letter-spacing:-.045em}
-h1 em{font-style:italic;color:var(--lac)}
-.lead{max-width:460px;margin:20px 0 26px;font-size:17px;line-height:1.5;color:#3b3033}
-.btns{display:flex;gap:10px;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:52px;padding:0 24px;border-radius:999px;font-weight:600;font-size:15px;transition:transform .2s,background .2s}
-.btn:active{transform:scale(.97)}
-.btn.p{background:var(--lac);color:#fff}.btn.p:hover{background:var(--lac2)}
-.btn.w{background:var(--wa);color:#fff}
-.btn.g{border:1.5px solid var(--ink)}
-.trust{display:flex;gap:22px;margin-top:28px;flex-wrap:wrap;font-size:13px;color:var(--mute)}
-.trust b{display:block;font:500 26px Fraunces,Georgia,serif;color:var(--ink)}
-/* reels as nail tips; only the 1st plays on phones */
-.tips{display:flex;gap:10px;justify-content:center;align-items:center}
-.tip{flex:1;max-width:190px;aspect-ratio:9/16;border-radius:999px 999px 22px 22px;overflow:hidden;background:var(--blush) center/cover;box-shadow:0 24px 44px -22px #5a0a1a80;position:relative}
-.tip video{width:100%;height:100%;object-fit:cover}
-.tip:nth-child(odd){transform:translateY(24px)}
-.tip span{position:absolute;left:0;right:0;bottom:12px;text-align:center;color:#fff;font-size:10px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;text-shadow:0 1px 6px #000a}
-@media(max-width:899px){.tip:nth-child(n+4){display:none}}
-
-/* marquee (transform only, GPU) */
 .marq{background:var(--ink);color:var(--paper);overflow:hidden;white-space:nowrap;padding:14px 0}
-.marq div{display:inline-block;animation:mq 40s linear infinite;font:italic 300 clamp(22px,3.4vw,44px) Fraunces,Georgia,serif;will-change:transform}
+.marq div{display:inline-block;animation:mq 40s linear infinite;font:italic 300 clamp(22px,3.4vw,44px) Fraunces,Georgia,serif}
 .marq i{color:#ff5a72;font-style:normal;margin:0 .45em}
 @keyframes mq{to{transform:translateX(-50%)}}
 
-section{padding:64px 0}
-@media(min-width:900px){section{padding:110px 0}}
-.eyebrow{display:flex;justify-content:space-between;gap:12px;border-top:1px solid var(--line);padding-top:12px;margin-bottom:22px;color:var(--mute)}
-h2{font:300 clamp(36px,6vw,88px)/.95 Fraunces,Georgia,serif;letter-spacing:-.04em;max-width:16ch}
-h2 em{color:var(--lac)}
-
 /* counters */
-.counters{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:28px}
+.counters{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:30px}
 @media(min-width:900px){.counters{grid-template-columns:repeat(9,1fr)}}
-.ctr{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:10px;text-align:left;display:grid;gap:8px;transition:border-color .2s,transform .2s}
-.ctr:hover{border-color:var(--lac);transform:translateY(-3px)}
-.ctr img{aspect-ratio:1;object-fit:cover;border-radius:10px;width:100%;background:#eee}
-.ctr b{font-size:13px;line-height:1.2;font-weight:600}
+.ctr{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:10px;display:grid;gap:8px;transition:transform .3s,border-color .3s}
+.ctr:hover{transform:translateY(-4px);border-color:var(--lac)}
+.ctr img{aspect-ratio:1;object-fit:cover;border-radius:12px;width:100%}
+.ctr b{font-size:13px;line-height:1.2}
 .ctr small{color:var(--mute);font-size:12px}
 
-/* catalogue */
-.tools{position:sticky;top:60px;z-index:20;background:var(--paper);padding:12px 0;display:grid;gap:10px;margin-top:20px}
-.search{display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:0 18px;height:50px}
-.search input{flex:1;border:0;outline:0;background:none;font:inherit;font-size:16px}
-.chips{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding-bottom:2px}
-.chips::-webkit-scrollbar{display:none}
-.chip{flex:none;border:1px solid var(--line);border-radius:999px;padding:9px 15px;font-size:13px;font-weight:500;background:var(--card)}
-.chip.on{background:var(--ink);color:#fff;border-color:var(--ink)}
-.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:8px}
-@media(min-width:640px){.grid{grid-template-columns:repeat(3,1fr)}}
-@media(min-width:1000px){.grid{grid-template-columns:repeat(5,1fr);gap:16px}}
-.pc{background:var(--card);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;border:1px solid var(--line);content-visibility:auto;contain-intrinsic-size:auto 320px}
-.pc .im{aspect-ratio:1;background:#f1ece8;overflow:hidden}
-.pc img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
-@media(hover:hover){.pc:hover img{transform:scale(1.06)}}
-.pc .tx{padding:10px 12px 12px;display:flex;flex-direction:column;gap:4px;flex:1}
-.pc .br{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--lac);font-weight:600;min-height:12px}
-.pc h3{font-size:13.5px;line-height:1.3;font-weight:500;flex:1;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.pc .add{margin-top:8px;min-height:40px;border-radius:10px;border:1.5px solid var(--ink);font-size:13px;font-weight:600;transition:background .15s}
-.pc .add.on{background:var(--ink);color:#fff}
-.more{display:flex;justify-content:center;margin-top:24px}
-.empty{padding:40px 0;text-align:center;color:var(--mute);grid-column:1/-1}
-.note{font-size:12px;color:var(--mute);margin-top:14px}
+/* MID: floating shelf — products drift past in two belts, the middle one floats */
+.shelf{background:var(--blush);overflow:hidden;position:relative}
+.belt{display:flex;align-items:center;gap:18px;width:max-content;animation:belt 60s linear infinite;padding:12px 0}
+.belt.rev{animation-direction:reverse;animation-duration:70s}
+.belt:hover{animation-play-state:paused}
+@keyframes belt{to{transform:translateX(-50%)}}
+.orb{flex:none;width:clamp(150px,18vw,230px);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff,#fbeeee 70%);display:grid;place-items:center;position:relative;transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+.orb:hover{transform:scale(1.08)}
+.orb img{width:58%;height:66%;object-fit:contain;animation:bob 4s ease-in-out infinite;animation-delay:var(--dl);filter:drop-shadow(0 18px 14px #5a0a1a33)}
+.orb span{position:absolute;bottom:-4px;left:50%;transform:translateX(-50%);background:var(--ink);color:#fff;font-size:11px;padding:5px 10px;border-radius:999px;white-space:nowrap;opacity:0;transition:opacity .3s}
+.orb:hover span{opacity:1}
 
-/* reels */
+/* spotlight: one product floating big next to copy */
+.spot{display:grid;gap:30px;align-items:center}
+@media(min-width:900px){.spot{grid-template-columns:1fr 1fr}}
+.stage{position:relative;aspect-ratio:1;max-width:560px;width:100%;margin:auto}
+.stage .ring{position:absolute;inset:8%;border-radius:50%;border:1px solid var(--line)}
+.stage .ring.b{inset:20%;background:radial-gradient(circle,#fff 0,#f6f1eb 70%)}
+.stage .fl{left:28%;top:12%;width:44%}
+.stage .fl.s1{left:2%;top:58%;width:22%}
+.stage .fl.s2{left:74%;top:8%;width:20%}
+.stage .fl.s3{left:72%;top:66%;width:24%}
+.spot ul{list-style:none;margin:22px 0 28px;display:grid;gap:10px}
+.spot li{display:flex;gap:12px;align-items:baseline;border-bottom:1px solid var(--line);padding-bottom:10px}
+.spot li b{color:var(--lac);font-family:Fraunces,Georgia,serif;font-size:20px}
+
 .dark{background:var(--ink);color:var(--paper)}
 .dark .eyebrow{border-color:#fff2;color:#fff9}
 .reels{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:28px}
 @media(min-width:900px){.reels{grid-template-columns:repeat(4,1fr);gap:14px}}
-.reel{border-radius:16px;overflow:hidden;aspect-ratio:9/16;position:relative;background:#2a2023 center/cover}
+.reel{border-radius:999px 999px 18px 18px;overflow:hidden;aspect-ratio:9/16;position:relative;background:#2a2023 center/cover}
 .reel video{width:100%;height:100%;object-fit:cover}
-.reel span{position:absolute;left:12px;right:12px;bottom:12px;font-size:13px;font-weight:500;text-shadow:0 1px 8px #000}
-
-/* why */
-.why{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--ink);margin-top:28px}
-@media(min-width:900px){.why{grid-template-columns:repeat(4,1fr)}}
-.why div{padding:22px 16px 22px 0;border-bottom:1px solid var(--line)}
-.why b{font:400 40px/1 Fraunces,Georgia,serif;color:var(--lac);display:block;margin-bottom:12px}
-.why p{color:#3b3033;line-height:1.5;font-size:14.5px}
-
-/* order */
-.order{display:grid;gap:36px}
-@media(min-width:900px){.order{grid-template-columns:1fr 1fr;gap:60px}}
-form{display:grid;gap:14px;background:var(--card);border-radius:20px;padding:22px;border:1px solid var(--line)}
-label{display:grid;gap:6px;font-size:13px;color:var(--mute);font-weight:500}
-input,select,textarea{font:inherit;font-size:16px;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:13px 14px;outline:none;width:100%}
-input:focus,textarea:focus,select:focus{border-color:var(--lac)}
-.listbox{font-size:14px;background:var(--blush);border-radius:12px;padding:12px 14px;color:var(--lac2)}
-.map{border-radius:18px;overflow:hidden;margin-top:22px;border:1px solid var(--line);background:#e9e2dc}
-.map iframe{width:100%;height:240px;border:0;display:block}
-
-footer{background:var(--lac);color:#fff;padding:56px 0 28px;overflow:hidden}
-footer .big{font:italic 300 clamp(64px,16vw,260px)/.8 Fraunces,Georgia,serif;letter-spacing:-.05em;white-space:nowrap}
-footer .fl{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-top:32px;font-size:13px;opacity:.9}
-
-/* mobile conversion bar */
-.mbar{position:fixed;left:0;right:0;bottom:0;z-index:60;display:grid;grid-template-columns:1fr 1.4fr 1fr;gap:8px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:#fffffff2;border-top:1px solid var(--line);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
-.mbar a,.mbar button{min-height:50px;border-radius:14px;display:flex;align-items:center;justify-content:center;gap:6px;font-weight:600;font-size:14px}
-.mbar .c{border:1.5px solid var(--ink)}
-.mbar .w{background:var(--wa);color:#fff}
-.mbar .l{background:var(--ink);color:#fff}
-.mbar .l b{background:var(--lac);border-radius:999px;min-width:20px;height:20px;display:grid;place-items:center;font-size:11px}
-@media(min-width:900px){.mbar{display:none}}
-.waf{display:none}
-@media(min-width:900px){.waf{display:grid;position:fixed;right:22px;bottom:22px;z-index:60;width:58px;height:58px;border-radius:50%;background:var(--wa);place-items:center;box-shadow:0 10px 30px #0004}}
-
-/* enquiry drawer */
-.dw{position:fixed;inset:0;z-index:80;visibility:hidden}
-.dw.on{visibility:visible}
-.dw .bg{position:absolute;inset:0;background:#0007;opacity:0;transition:opacity .25s}
-.dw.on .bg{opacity:1}
-.dw .pn{position:absolute;right:0;bottom:0;width:100%;max-width:440px;max-height:85svh;background:var(--paper);border-radius:22px 22px 0 0;display:flex;flex-direction:column;transform:translateY(100%);transition:transform .3s cubic-bezier(.2,.8,.2,1)}
-@media(min-width:900px){.dw .pn{top:0;max-height:none;border-radius:0;transform:translateX(100%)}}
-.dw.on .pn{transform:none}
-.dw header{display:flex;justify-content:space-between;align-items:center;padding:18px 20px;border-bottom:1px solid var(--line)}
-.dw ul{list-style:none;overflow:auto;flex:1;padding:8px 20px}
-.dw li{display:grid;grid-template-columns:52px 1fr auto;gap:12px;align-items:center;padding:10px 0;border-bottom:1px solid var(--line);font-size:14px}
-.dw li img{width:52px;height:52px;border-radius:10px;object-fit:cover}
-.dw li button{font-size:20px;color:var(--mute);padding:6px}
-.dw .ft{padding:16px 20px calc(16px + env(safe-area-inset-bottom));display:grid;gap:8px}
-.toast{position:fixed;left:50%;bottom:92px;transform:translate(-50%,20px);background:var(--ink);color:#fff;padding:10px 18px;border-radius:999px;font-size:14px;opacity:0;transition:.25s;z-index:90;pointer-events:none}
-.toast.on{opacity:1;transform:translate(-50%,0)}
-@media(min-width:900px){.toast{bottom:30px}}
-
-/* reveal: one IntersectionObserver, CSS-only motion */
-.rv{opacity:0;transform:translateY(24px);transition:opacity .8s,transform .8s cubic-bezier(.2,.8,.2,1)}
-.rv.in{opacity:1;transform:none}
-@media(prefers-reduced-motion:reduce){.marq div{animation:none}.rv{opacity:1;transform:none}}
+.reel span{position:absolute;left:12px;right:12px;bottom:14px;font-size:13px;font-weight:500;text-shadow:0 1px 8px #000;text-align:center}
+.visit{display:grid;gap:30px}
+@media(min-width:900px){.visit{grid-template-columns:1fr 1fr;align-items:end}}
+.map{border-radius:20px;overflow:hidden;border:1px solid var(--line);background:#e9e2dc;min-height:260px;display:grid;place-items:center}
+.map iframe{width:100%;height:300px;border:0;display:block}
 </style>
 </head>
-<body>
+<body data-page="home">
 
-<nav><div class="wrap">
-  <a href="#" class="logo">Nail<i>.</i>Mart</a>
-  <div class="nl"><a href="#catalogue">Catalogue</a><a href="#reels">Reels</a><a href="#why">Why us</a><a href="#order">Visit &amp; order</a></div>
-  <button class="listbtn" data-open>List <b class="lc">0</b></button>
-</div></nav>
-
-<header class="wrap hero">
-  <div>
-    <p class="mono kick">● Wholesale nail art supplies · New Delhi</p>
-    <h1>Everything your <em>nail bar</em> needs.</h1>
-    <p class="lead">Gel polish, cat-eye, builder gels, tips, stickers, tools, drills and lamps. Pick what you need, send the list, and we'll WhatsApp you wholesale rates. Delivery all over India.</p>
-    <div class="btns">
-      <a class="btn p" href="#catalogue">Browse 200+ products →</a>
-      <a class="btn w" href="https://wa.me/918802395525?text=Hi%20Nail%20Mart!%20Please%20share%20your%20wholesale%20rate%20list." target="_blank" rel="noopener">WhatsApp us</a>
-    </div>
-    <div class="trust">
-      <div><b>5.0★</b>Google rating</div>
-      <div><b>200+</b>Products</div>
-      <div><b>All-India</b>Delivery</div>
-    </div>
+<header class="hero" data-float>
+  <div class="glow"></div>
+  <!-- floating real products (cut-outs) -->
+  <a class="fl link" href="product.html?id=69" data-z=".9" data-r="-14" style="left:4%;top:10%;width:clamp(90px,11vw,170px)"><img src="media/f/69.webp" alt=""></a>
+  <a class="fl link front" href="product.html?id=40" data-z="1.2" data-r="12" style="left:14%;top:62%;width:clamp(70px,8vw,130px)"><img src="media/f/40.webp" alt=""></a>
+  <a class="fl link dsk" href="product.html?id=3" data-z=".5" data-r="-6" style="left:26%;top:4%;width:clamp(60px,6vw,100px)"><img src="media/f/3.webp" alt=""></a>
+  <a class="fl link" href="product.html?id=94" data-z="1" data-r="10" style="left:80%;top:8%;width:clamp(70px,8vw,130px)"><img src="media/f/94.webp" alt=""></a>
+  <a class="fl link front" href="product.html?id=193" data-z="1.3" data-r="-8" style="left:72%;top:60%;width:clamp(110px,14vw,220px)"><img src="media/f/193.webp" alt=""></a>
+  <a class="fl link dsk" href="product.html?id=171" data-z=".6" data-r="18" style="left:62%;top:2%;width:clamp(50px,5vw,86px)"><img src="media/f/171.webp" alt=""></a>
+  <a class="fl link dsk" href="product.html?id=84" data-z=".7" data-r="-20" style="left:90%;top:40%;width:clamp(50px,5vw,90px)"><img src="media/f/84.webp" alt=""></a>
+  <a class="fl link dsk" href="product.html?id=117" data-z="1.1" data-r="30" style="left:2%;top:40%;width:clamp(30px,3vw,52px)"><img src="media/f/117.webp" alt=""></a>
+  <a class="fl link dsk" href="product.html?id=11" data-z=".8" data-r="-4" style="left:40%;top:76%;width:clamp(70px,8vw,130px)"><img src="media/f/11.webp" alt=""></a>
+  <div class="copy">
+    <p class="mono" style="color:var(--lac);margin-bottom:18px">● Wholesale nail art supplies · New Delhi</p>
+    <h1>Everything your <em>nail&nbsp;bar</em> needs.</h1>
+    <p class="lead">Gel polish, cat-eye, builder gels, tips, stickers, tools, drills and lamps. Build your list, send it on WhatsApp, get wholesale rates.</p>
+    <div class="btns"><a class="btn p" href="shop.html">Shop now →</a><a class="btn g" href="#counters">Browse counters</a></div>
   </div>
-  <div class="tips">
-    <div class="tip" style="background-image:url(media/p1.jpg)"><video data-src="media/h1.mp4" muted loop playsinline preload="none"></video><span>Cat-eye</span></div>
-    <div class="tip" style="background-image:url(media/p4.jpg)"><video data-src="media/h4.mp4" muted loop playsinline preload="none"></video><span>Gel polish</span></div>
-    <div class="tip" style="background-image:url(media/p2.jpg)"><video data-src="media/h2.mp4" muted loop playsinline preload="none"></video><span>Glass bead</span></div>
-    <div class="tip" style="background-image:url(media/p3.jpg)"><video data-src="media/h3.mp4" muted loop playsinline preload="none"></video><span>Tips</span></div>
-  </div>
+  <span class="scrollcue mono">Scroll ↓</span>
 </header>
 
 <div class="marq" aria-hidden="true"><div>Gel Polish <i>✦</i> Cat-Eye <i>✦</i> Builder Gel <i>✦</i> Sandwich Tips <i>✦</i> Press-Ons <i>✦</i> Stickers <i>✦</i> Charms <i>✦</i> Drills &amp; Lamps <i>✦</i> Gel Polish <i>✦</i> Cat-Eye <i>✦</i> Builder Gel <i>✦</i> Sandwich Tips <i>✦</i> Press-Ons <i>✦</i> Stickers <i>✦</i> Charms <i>✦</i> Drills &amp; Lamps <i>✦</i></div></div>
 
-<section id="catalogue">
+<section id="counters">
   <div class="wrap">
-    <div class="eyebrow mono"><span>01 — Catalogue</span><span id="total"></span></div>
-    <h2 class="rv">Shop the <em>counter</em>.</h2>
+    <div class="eyebrow mono"><span>01 — Shop by counter</span><a href="shop.html">All products →</a></div>
+    <h2 class="rv">Nine counters, <em>one</em> order.</h2>
     <div class="counters" id="ctrs"></div>
-    <div class="tools">
-      <label class="search" aria-label="Search products"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="q" type="search" placeholder="Search cat eye, builder gel, drill…" autocomplete="off"></label>
-      <div class="chips" id="chips"></div>
+  </div>
+</section>
+
+<section class="shelf">
+  <div class="wrap"><div class="eyebrow mono"><span>02 — The floating shelf</span><span>Tap any product</span></div>
+  <h2 class="rv" style="margin-bottom:34px">Pick it off the <em>shelf</em>.</h2></div>
+  <div class="belt" id="b1"></div>
+  <div class="belt rev" id="b2"></div>
+</section>
+
+<section>
+  <div class="wrap spot">
+    <div class="stage" data-float>
+      <div class="ring"></div><div class="ring b"></div>
+      <a class="fl link" href="product.html?id=193" data-z=".6" data-a="18" data-r="-6"><img src="media/f/193.webp" alt="UV LED nail lamp"></a>
+      <a class="fl link s1" href="product.html?id=94" data-z="1.2" data-r="14"><img src="media/f/94.webp" alt=""></a>
+      <a class="fl link s2" href="product.html?id=6" data-z="1" data-r="-16"><img src="media/f/6.webp" alt=""></a>
+      <a class="fl link s3" href="product.html?id=69" data-z="1.4" data-r="8"><img src="media/f/69.webp" alt=""></a>
     </div>
-    <div class="grid" id="grid"></div>
-    <div class="more"><button class="btn g" id="more">Show more</button></div>
-    <p class="note">Tap <b>+ Add</b> on anything you need, then send the list on WhatsApp for current wholesale rates and stock.</p>
+    <div>
+      <div class="eyebrow mono"><span>03 — Starter kit</span><span>For new studios</span></div>
+      <h2 class="rv">Open a studio with <em>one</em> message.</h2>
+      <ul>
+        <li><b>01</b>A UV/LED lamp that cures gel in seconds</li>
+        <li><b>02</b>Base, top coat and builder gel</li>
+        <li><b>03</b>Cat-eye shades and a magnet</li>
+        <li><b>04</b>Tips, files and a cuticle pusher</li>
+      </ul>
+      <a class="btn p" id="kit" href="#">Add starter kit to list →</a>
+    </div>
+  </div>
+</section>
+
+<section id="new" style="padding-top:0">
+  <div class="wrap">
+    <div class="eyebrow mono"><span>04 — Fresh on the counter</span><a href="shop.html">Shop all →</a></div>
+    <h2 class="rv" style="margin-bottom:30px">Just <em>landed</em>.</h2>
+    <div class="grid" id="fresh"></div>
   </div>
 </section>
 
 <section id="reels" class="dark">
   <div class="wrap">
-    <div class="eyebrow mono"><span>02 — From the counter</span><a href="https://www.instagram.com/nail_mart_india/" target="_blank" rel="noopener">@nail_mart_india ↗</a></div>
+    <div class="eyebrow mono"><span>05 — From the counter</span><a href="https://www.instagram.com/nail_mart_india/" target="_blank" rel="noopener">@nail_mart_india ↗</a></div>
     <h2 class="rv">See it <em style="color:#ff6b80">swatched</em> first.</h2>
     <div class="reels">
       <div class="reel" style="background-image:url(media/p1.jpg)"><video data-src="media/h1.mp4" muted loop playsinline preload="none"></video><span>Uomi cat-eye · 36 colours</span></div>
@@ -230,108 +159,31 @@ footer .fl{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;ma
   </div>
 </section>
 
-<section id="why">
-  <div class="wrap">
-    <div class="eyebrow mono"><span>03 — Why salons restock here</span><span>Delhi</span></div>
-    <h2 class="rv">Priced for <em>artists</em>, not shelves.</h2>
-    <div class="why">
-      <div><b>01</b><p>Wholesale rates for salons, academies and resellers. Single pieces too.</p></div>
-      <div><b>02</b><p>Swatch videos for new arrivals, so the colour is never a guess.</p></div>
-      <div><b>03</b><p>Dispatch all over India. Pick-up in Mahavir Enclave.</p></div>
-      <div><b>04</b><p>Order on WhatsApp. One message, a real person, a confirmed price.</p></div>
-    </div>
-  </div>
-</section>
-
-<section id="order" style="padding-top:0">
-  <div class="wrap order">
+<section id="visit">
+  <div class="wrap visit">
     <div>
-      <div class="eyebrow mono"><span>04 — Visit &amp; order</span><span>Mon–Sat</span></div>
-      <h2 class="rv">Send your list. Get the <em>rate</em>.</h2>
-      <p style="margin-top:18px;color:#3b3033;line-height:1.6">RZ-7 &amp; 8B, Gurudwara Road, Mahavir Enclave, New Delhi 110045<br><a href="tel:+918802395525" style="color:var(--lac);font-weight:600">+91 88023 95525</a></p>
-      <div class="map" id="map"><button class="btn g" style="margin:96px auto;display:flex" onclick="this.parentNode.innerHTML='<iframe title=Map src=&quot;https://www.google.com/maps?q=Mahavir+Enclave+Gurudwara+Road+New+Delhi+110045&amp;output=embed&quot;></iframe>'">Show map</button></div>
+      <div class="eyebrow mono"><span>06 — Visit</span><span>5.0★ on Google</span></div>
+      <h2 class="rv">Come see the <em>wall</em>.</h2>
+      <p style="margin:18px 0 22px;color:#3b3033;line-height:1.6">RZ-7 &amp; 8B, Gurudwara Road, Mahavir Enclave, New Delhi 110045<br><a href="tel:+918802395525" style="color:var(--lac);font-weight:700">+91 88023 95525</a></p>
+      <a class="btn k" href="https://www.google.com/maps/search/?api=1&query=Nail+Mart+Mahavir+Enclave+New+Delhi" target="_blank" rel="noopener">Get directions ↗</a>
     </div>
-    <form id="f">
-      <label>Your name / salon<input name="n" required autocomplete="name"></label>
-      <label>City<input name="c" required autocomplete="address-level2"></label>
-      <label>I am a<select name="t"><option>Salon / nail studio</option><option>Nail artist</option><option>Academy</option><option>Reseller</option></select></label>
-      <div class="listbox" id="lb">Your list is empty. Add products from the catalogue, or just type below.</div>
-      <label>Anything else?<textarea name="m" rows="3" placeholder="e.g. 2 boxes sandwich tips, 36-colour cat-eye set"></textarea></label>
-      <button class="btn w">Send on WhatsApp →</button>
-    </form>
+    <div class="map"><button class="btn g" onclick="this.parentNode.innerHTML='<iframe title=Map src=&quot;https://www.google.com/maps?q=Mahavir+Enclave+Gurudwara+Road+New+Delhi+110045&amp;output=embed&quot;></iframe>'">Show map</button></div>
   </div>
 </section>
-
-<footer>
-  <div class="wrap">
-    <div class="big">Nail Mart</div>
-    <div class="fl"><span>© Nail Mart · Nail art products · New Delhi</span><a href="tel:+918802395525">+91 88023 95525</a><a href="https://www.instagram.com/nail_mart_india/">Instagram ↗</a></div>
-  </div>
-</footer>
-
-<div class="mbar">
-  <a class="c" href="tel:+918802395525">Call</a>
-  <a class="w" href="https://wa.me/918802395525?text=Hi%20Nail%20Mart!%20Please%20share%20your%20wholesale%20rate%20list." target="_blank" rel="noopener">WhatsApp</a>
-  <button class="l" data-open>List <b class="lc">0</b></button>
-</div>
-<a class="waf" href="https://wa.me/918802395525" target="_blank" rel="noopener" aria-label="WhatsApp"><svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.2.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l2 .9c.3.2.5.2.5.4.1.1.1.7-.1 1.3z"/></svg></a>
-
-<div class="dw" id="dw" aria-hidden="true">
-  <div class="bg" data-close></div>
-  <div class="pn" role="dialog" aria-label="Enquiry list">
-    <header><b class="serif" style="font-size:22px">Your list</b><button data-close aria-label="Close" style="font-size:26px">×</button></header>
-    <ul id="dl"></ul>
-    <div class="ft"><button class="btn w" id="send">Send list on WhatsApp →</button><a class="btn g" href="#order" data-close>Add name &amp; city first</a></div>
-  </div>
-</div>
-<div class="toast" id="toast"></div>
 
 <script src="products.js"></script>
+<script src="js/site.js"></script>
 <script>
-const WA='918802395525',$=s=>document.querySelector(s),$$=s=>document.querySelectorAll(s);
 const CATS=[...new Set(P.map(p=>p.c))];
-let cat='All',q='',shown=20;
-let list=[];try{list=JSON.parse(localStorage.nmList||'[]')}catch(e){}
-const save=()=>{try{localStorage.nmList=JSON.stringify(list)}catch(e){}};
-$('#total').textContent=P.length+' products';
-
-// counters: first product image of each category
-$('#ctrs').innerHTML=CATS.map(c=>{const ps=P.filter(p=>p.c===c);return `<button class="ctr" data-c="${c}"><img src="${ps[0].i}" alt="" loading="lazy" width="120" height="120"><b>${c}</b><small>${ps.length} items</small></button>`}).join('');
-$('#chips').innerHTML=['All',...CATS].map(c=>`<button class="chip${c==='All'?' on':''}" data-c="${c}">${c}</button>`).join('');
-
-function filtered(){const t=q.toLowerCase();return P.map((p,i)=>({...p,id:i})).filter(p=>(cat==='All'||p.c===cat)&&(!t||(p.n+' '+p.b+' '+p.c).toLowerCase().includes(t)))}
-function render(){const f=filtered();
- $('#grid').innerHTML=f.length?f.slice(0,shown).map(p=>`<article class="pc"><div class="im"><img src="${p.i}" alt="${p.n.replace(/"/g,'')}" loading="lazy" decoding="async" width="480" height="480"></div><div class="tx"><span class="br">${p.b||p.c}</span><h3>${p.n}</h3><button class="add${list.includes(p.id)?' on':''}" data-id="${p.id}">${list.includes(p.id)?'✓ In list':'+ Add'}</button></div></article>`).join(''):'<p class="empty">Nothing matches — WhatsApp us, we probably still have it.</p>';
- $('#more').style.display=f.length>shown?'':'none'}
-function setCat(c){cat=c;shown=20;$$('.chip').forEach(x=>{const on=x.dataset.c===c;x.classList.toggle('on',on);if(on)x.parentNode.scrollTo({left:x.offsetLeft-16,behavior:'smooth'})});render()}
-$('#chips').onclick=e=>{const b=e.target.closest('.chip');if(b)setCat(b.dataset.c)};
-$('#ctrs').onclick=e=>{const b=e.target.closest('.ctr');if(b){setCat(b.dataset.c);$('.tools').scrollIntoView({behavior:'smooth'})}};
-let tq;$('#q').oninput=e=>{clearTimeout(tq);tq=setTimeout(()=>{q=e.target.value.trim();shown=20;render()},150)};
-$('#more').onclick=()=>{shown+=20;render()};
-
-// enquiry list
-function toast(t){const el=$('#toast');el.textContent=t;el.classList.add('on');clearTimeout(el._t);el._t=setTimeout(()=>el.classList.remove('on'),1600)}
-function sync(){$$('.lc').forEach(x=>x.textContent=list.length);
- $('#dl').innerHTML=list.length?list.map(id=>`<li><img src="${P[id].i}" alt=""><span>${P[id].n}</span><button data-rm="${id}" aria-label="Remove">×</button></li>`).join(''):'<li style="display:block;color:var(--mute)">Nothing yet. Tap “+ Add” on products.</li>';
- $('#lb').textContent=list.length?list.length+' item(s): '+list.map(id=>P[id].n).join(' · '):'Your list is empty. Add products from the catalogue, or just type below.';save()}
-$('#grid').onclick=e=>{const b=e.target.closest('.add');if(!b)return;const id=+b.dataset.id,k=list.indexOf(id);
- if(k<0){list.push(id);b.classList.add('on');b.textContent='✓ In list';toast('Added · '+list.length+' in list')}else{list.splice(k,1);b.classList.remove('on');b.textContent='+ Add'}sync()};
-$('#dl').onclick=e=>{const b=e.target.closest('[data-rm]');if(!b)return;list.splice(list.indexOf(+b.dataset.rm),1);sync();render()};
-const dw=$('#dw');
-$$('[data-open]').forEach(b=>b.onclick=()=>{dw.classList.add('on');dw.setAttribute('aria-hidden','false')});
-$$('[data-close]').forEach(b=>b.addEventListener('click',()=>{dw.classList.remove('on');dw.setAttribute('aria-hidden','true')}));
-const msg=(who='')=>`Hi Nail Mart!${who}\nPlease share wholesale rates for:\n${list.map((id,i)=>`${i+1}. ${P[id].n}`).join('\n')}`;
-$('#send').onclick=()=>{if(!list.length)return toast('Add a product first');open(`https://wa.me/${WA}?text=${encodeURIComponent(msg())}`,'_blank')};
-$('#f').onsubmit=e=>{e.preventDefault();const f=new FormData(e.target);let t=`Hi Nail Mart! I'm ${f.get('n')} (${f.get('t')}, ${f.get('c')}).`;
- if(list.length)t+=`\nPlease share wholesale rates for:\n${list.map((id,i)=>`${i+1}. ${P[id].n}`).join('\n')}`;if(f.get('m'))t+='\n'+f.get('m');open(`https://wa.me/${WA}?text=${encodeURIComponent(t)}`,'_blank')};
-render();sync();
-
-// videos: load + play only while on screen, never more than what's visible
-const vio=new IntersectionObserver(es=>es.forEach(({target:v,isIntersecting:on})=>{if(on){if(!v.src)v.src=v.dataset.src;v.play().catch(()=>{})}else v.pause()}),{threshold:.25});
-$$('video[data-src]').forEach(v=>{if(v.offsetParent)vio.observe(v)});
-// reveals
-const rio=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');rio.unobserve(e.target)}}),{rootMargin:'0px 0px -10% 0px'});
-$$('.rv').forEach(el=>rio.observe(el));
+$('#ctrs').innerHTML=CATS.map(c=>{const ps=P.filter(p=>p.c===c);return `<a class="ctr" href="shop.html?c=${encodeURIComponent(c)}"><img src="${ps[0].i}" alt="" loading="lazy" width="120" height="120"><b>${c}</b><small>${ps.length} items</small></a>`}).join('');
+const orb=(id,k)=>`<a class="orb" href="product.html?id=${id}" style="--dl:-${(k*.7)%4}s"><img src="${fimg(id)}" alt="${esc(P[id].n)}" loading="lazy"><span>${P[id].n.slice(0,28)}</span></a>`;
+const A=FLOAT.slice(0,11),B=FLOAT.slice(11);
+$('#b1').innerHTML=[...A,...A].map(orb).join('');$('#b2').innerHTML=[...B,...B].map(orb).join('');
+// fresh: one per counter, then fill
+const fresh=CATS.map(c=>P.find(p=>p.c===c)).concat(P.filter((p,i)=>i%17===5)).slice(0,8);
+$('#fresh').innerHTML=fresh.map(card).join('');
+$('#kit').onclick=e=>{e.preventDefault();[193,69,6,94,40].forEach(id=>{if(!list.includes(id))list.push(id)});sync();toast('Starter kit added · '+list.length+' in list');$('#dw').classList.add('on')};
+sync();watch();
 </script>
 </body>
 </html>

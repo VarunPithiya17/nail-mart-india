@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Shop — Nail Mart · Nail Art Products Delhi</title>
+<meta name="description" content="Shop 200+ nail art products at Nail Mart, New Delhi: gel polish, cat-eye, builder gel, tips, press-ons, stickers, charms, tools, drills and lamps.">
+<meta name="theme-color" content="#b3122e">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Inter+Tight:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="css/site.css">
+<style>
+.shead{position:relative;overflow:hidden;padding:56px 0 40px;background:var(--blush)}
+.shead h1{font-size:clamp(52px,10vw,150px);line-height:.88;position:relative;z-index:2}
+.shead p{position:relative;z-index:2;margin-top:14px;color:#3b3033;max-width:440px}
+.shead .fl{z-index:1;opacity:.95}
+@media(max-width:700px){.shead .fl:nth-of-type(n+3){display:none}}
+.tools{position:sticky;top:60px;z-index:20;background:var(--paper);padding:12px 0;display:grid;gap:10px}
+.search{display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:0 18px;height:50px}
+.search input{flex:1;border:0;outline:0;background:none;font:inherit;font-size:16px}
+.chips{position:relative;display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;border:1px solid var(--line);border-radius:999px;padding:9px 15px;font-size:13px;font-weight:500;background:var(--card)}
+.chip.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.chip small{opacity:.6;margin-left:4px}
+.res{display:flex;justify-content:space-between;color:var(--mute);font-size:13px;margin:6px 0 12px}
+.more{display:flex;justify-content:center;margin:26px 0 70px}
+.empty{padding:50px 0;text-align:center;color:var(--mute);grid-column:1/-1}
+</style>
+</head>
+<body data-page="shop">
+
+<header class="shead" data-float>
+  <div class="wrap">
+    <p class="mono" style="color:var(--lac);margin-bottom:14px;position:relative;z-index:2">Shop now · wholesale rates on WhatsApp</p>
+    <h1>The <em>whole</em><br>counter.</h1>
+    <p>Add what you need, send the list, and we'll confirm price and stock in minutes.</p>
+  </div>
+  <span class="fl" data-z="1" data-r="-12" style="right:6%;top:12%;width:clamp(80px,10vw,160px)"><img src="media/f/94.webp" alt=""></span>
+  <span class="fl" data-z="1.4" data-r="10" style="right:22%;top:52%;width:clamp(70px,8vw,130px)"><img src="media/f/69.webp" alt=""></span>
+  <span class="fl" data-z=".7" data-r="16" style="right:36%;top:8%;width:clamp(50px,6vw,90px)"><img src="media/f/171.webp" alt=""></span>
+  <span class="fl" data-z="1.2" data-r="-20" style="right:2%;top:58%;width:clamp(60px,7vw,110px)"><img src="media/f/40.webp" alt=""></span>
+</header>
+
+<main class="wrap">
+  <div class="tools">
+    <label class="search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="q" type="search" placeholder="Search cat eye, builder gel, drill…" autocomplete="off" aria-label="Search products"></label>
+    <div class="chips" id="chips"></div>
+  </div>
+  <div class="res"><span id="count"></span><span>Prices on request</span></div>
+  <div class="grid" id="grid"></div>
+  <div class="more"><button class="btn g" id="more">Show more</button></div>
+</main>
+
+<script src="products.js"></script>
+<script src="js/site.js"></script>
+<script>
+const CATS=[...new Set(P.map(p=>p.c))],U=new URLSearchParams(location.search);
+let cat=CATS.includes(U.get('c'))?U.get('c'):'All',q=U.get('q')||'',shown=24;
+$('#q').value=q;
+$('#chips').innerHTML=['All',...CATS].map(c=>`<button class="chip" data-c="${esc(c)}">${c}<small>${c==='All'?P.length:P.filter(p=>p.c===c).length}</small></button>`).join('');
+function render(){const t=q.toLowerCase(),f=P.filter(p=>(cat==='All'||p.c===cat)&&(!t||(p.n+' '+p.b+' '+p.c).toLowerCase().includes(t)));
+ $('#grid').innerHTML=f.length?f.slice(0,shown).map(card).join(''):'<p class="empty">Nothing matches — WhatsApp us, we probably still have it.</p>';
+ $('#count').textContent=f.length+' products'+(cat!=='All'?' in '+cat:'');$('#more').style.display=f.length>shown?'':'none';sync();
+ $$('.chip').forEach(x=>{const on=x.dataset.c===cat;x.classList.toggle('on',on);if(on)x.parentNode.scrollTo({left:x.offsetLeft-x.parentNode.offsetLeft-16,behavior:'smooth'})});
+ history.replaceState(null,'',location.pathname+(cat!=='All'||q?'?'+new URLSearchParams({...(cat!=='All'&&{c:cat}),...(q&&{q})}):''))}
+$('#chips').onclick=e=>{const b=e.target.closest('.chip');if(b){cat=b.dataset.c;shown=24;render()}};
+let tq;$('#q').oninput=e=>{clearTimeout(tq);tq=setTimeout(()=>{q=e.target.value.trim();shown=24;render()},150)};
+$('#more').onclick=()=>{shown+=24;render()};
+render();
+</script>
+</body>
+</html>

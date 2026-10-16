@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Product — Nail Mart</title>
+<meta name="theme-color" content="#b3122e">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Inter+Tight:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="css/site.css">
+<style>
+.crumb{font-size:13px;color:var(--mute);padding:18px 0}
+.crumb a:hover{color:var(--lac)}
+.pd{display:grid;gap:28px;padding-bottom:60px}
+@media(min-width:900px){.pd{grid-template-columns:1.1fr 1fr;gap:60px;align-items:start}}
+.view{position:relative;aspect-ratio:1;border-radius:28px;background:radial-gradient(circle at 50% 45%,#fff 0,#f3e4e1 75%);overflow:hidden}
+@media(min-width:900px){.view{position:sticky;top:80px}}
+.view .fl{left:18%;top:12%;width:64%;height:76%;display:grid;place-items:center}
+.view .fl img{max-height:100%;width:auto;max-width:100%;object-fit:contain}
+.view .shadow{position:absolute;left:30%;right:30%;bottom:9%;height:5%;border-radius:50%;background:#5a0a1a2e;filter:blur(10px);animation:pulse 4s ease-in-out infinite}
+@keyframes pulse{50%{transform:scaleX(.8);opacity:.6}}
+.view .tag{position:absolute;left:16px;top:16px;background:var(--card);border-radius:999px;padding:7px 12px;font-size:12px;font-weight:600}
+.info h1{font-size:clamp(34px,4.6vw,64px);line-height:1;margin:10px 0 16px}
+.info .desc{color:#3b3033;line-height:1.6;max-width:520px}
+.qty{display:flex;align-items:center;gap:0;border:1.5px solid var(--ink);border-radius:999px;width:max-content;margin:24px 0 14px}
+.qty button{width:48px;height:48px;font-size:20px}
+.qty input{width:56px;text-align:center;border:0;background:none;font:inherit;font-size:17px;font-weight:600}
+.acts{display:grid;gap:10px;max-width:460px}
+.acts .add{min-height:54px;border-radius:999px;font-size:15px}
+.facts{list-style:none;margin-top:28px;border-top:1px solid var(--line);max-width:520px}
+.facts li{display:flex;justify-content:space-between;gap:12px;padding:13px 0;border-bottom:1px solid var(--line);font-size:14px}
+.facts li span{color:var(--mute)}
+.rel{padding:50px 0 80px}
+</style>
+</head>
+<body data-page="product">
+
+<main class="wrap" id="main">
+  <div class="crumb" id="crumb"></div>
+  <div class="pd">
+    <div class="view" data-float>
+      <div class="shadow"></div>
+      <span class="tag" id="tag"></span>
+      <div class="fl" data-z=".3" data-a="16"><img id="pimg" alt=""></div>
+    </div>
+    <div class="info">
+      <span class="br" id="brand"></span>
+      <h1 id="name"></h1>
+      <p class="desc" id="desc"></p>
+      <div class="qty"><button id="minus" aria-label="Less">−</button><input id="qn" value="1" inputmode="numeric" aria-label="Quantity"><button id="plus" aria-label="More">+</button></div>
+      <div class="acts">
+        <a class="btn w" id="ask" target="_blank" rel="noopener">Ask price on WhatsApp →</a>
+        <button class="add" id="addb" data-label="+ Add to enquiry list">+ Add to enquiry list</button>
+      </div>
+      <ul class="facts">
+        <li><span>Counter</span><b id="fc"></b></li>
+        <li><span>Price</span><b>Wholesale rate on request</b></li>
+        <li><span>Delivery</span><b>All over India</b></li>
+        <li><span>Pick-up</span><b>Mahavir Enclave, New Delhi</b></li>
+      </ul>
+    </div>
+  </div>
+</main>
+<section class="rel"><div class="wrap">
+  <div class="eyebrow mono"><span>From the same counter</span><a id="more">See all →</a></div>
+  <div class="grid" id="rel"></div>
+</div></section>
+
+<script src="products.js"></script>
+<script src="js/site.js"></script>
+<script>
+const id=+new URLSearchParams(location.search).get('id'),p=P[id]||P[0];
+const D={'Gel Polish':'Salon-grade gel colour that cures under UV/LED. Rich pigment, a glossy finish and long wear.','Cat-Eye & Magnets':'Magnetic shimmer gel. Hold a magnet over the wet layer to pull the light into a line, then cure.','Builder & Function Gels':'Function gel for strength, structure and a flawless finish. Works for overlays and extensions.','Tips & Extensions':'Pre-shaped tips that fit cleanly and file easily. Ready for gel, polygel or acrylic.','Press-On Nails':'Ready-to-wear press-on sets for quick, salon-look nails.','Stickers & Foils':'Nail art stickers and foils for fast, precise designs.','Charms & Stones':'Decor for statement sets: charms, stones, pearls and glitter.','Tools & Brushes':'Professional tools for prep, art and finishing.','Machines & Lamps':'Studio equipment for faster prep and cure times.'};
+document.title=p.n+' — Nail Mart';
+$('#crumb').innerHTML=`<a href="index.html">Home</a> / <a href="shop.html">Shop</a> / <a href="shop.html?c=${encodeURIComponent(p.c)}">${p.c}</a>`;
+$('#pimg').src=FLOAT.includes(p.id)?fimg(p.id):p.i;$('#pimg').alt=p.n;
+if(!FLOAT.includes(p.id)){$('#pimg').style.borderRadius='22px';$('#pimg').style.boxShadow='0 30px 50px -20px #5a0a1a55'}
+$('#brand').textContent=p.b||p.c;$('#name').textContent=p.n;$('#desc').textContent=D[p.c]||'';$('#tag').textContent=p.c;$('#fc').textContent=p.c;
+$('#addb').dataset.id=p.id;
+const ask=()=>$('#ask').href=`https://wa.me/${WA}?text=${encodeURIComponent(`Hi Nail Mart! Please share the wholesale rate for:\n${p.n} × ${$('#qn').value}`)}`;
+$('#minus').onclick=()=>{$('#qn').value=Math.max(1,+$('#qn').value-1);ask()};$('#plus').onclick=()=>{$('#qn').value=+$('#qn').value+1;ask()};$('#qn').oninput=ask;ask();
+$('#more').href='shop.html?c='+encodeURIComponent(p.c);
+$('#rel').innerHTML=P.filter(x=>x.c===p.c&&x.id!==p.id).slice(0,8).map(card).join('');
+sync();
+</script>
+</body>
+</html>
