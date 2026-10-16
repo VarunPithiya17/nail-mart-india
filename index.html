@@ -2,243 +2,242 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Nail Mart — Nail Art Products, Wholesale · Delhi</title>
-<meta name="description" content="Nail Mart, Mahavir Enclave, New Delhi. Gel polish, cat-eye, tips, tools and machines for salons and nail artists. Wholesale rates, delivery all over India.">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..800;1,9..144,300..800&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<meta name="description" content="Nail Mart, Mahavir Enclave, New Delhi. 200+ nail art products — gel polish, cat-eye, builder gels, tips, stickers, tools, drills and lamps. Wholesale rates, delivery all over India.">
+<meta name="theme-color" content="#b3122e">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" href="media/p1.jpg">
+<!-- non-blocking fonts: page renders with system fonts first -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Inter+Tight:wght@400;500;600&display=swap" media="print" onload="this.media='all'">
 <style>
-:root{--paper:#f4efe9;--ink:#1a1214;--lac:#b3122e;--lac2:#7a0a1f;--blush:#f1d6d2;--mute:#7d6f70;--line:#1a121422}
+:root{--paper:#f6f1eb;--card:#fff;--ink:#1a1214;--lac:#b3122e;--lac2:#7a0a1f;--blush:#f3dcd8;--mute:#75686a;--line:#1a12141f;--wa:#1faa55}
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:var(--paper);color:var(--ink);font-family:"Inter Tight",system-ui,sans-serif;overflow-x:clip;-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--paper);color:var(--ink);font-family:"Inter Tight",system-ui,-apple-system,"Segoe UI",sans-serif;overflow-x:clip;-webkit-font-smoothing:antialiased;padding-bottom:76px}
+@media(min-width:900px){body{padding-bottom:0}}
 a{color:inherit;text-decoration:none}
-.mono{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase}
-.serif{font-family:Fraunces,serif;font-variation-settings:"opsz" 144}
+button{font:inherit;color:inherit;cursor:pointer;background:none;border:0}
 img,video{display:block;max-width:100%}
-.wrap{max-width:1360px;margin:0 auto;padding:0 clamp(16px,4vw,48px)}
+.serif{font-family:Fraunces,Georgia,serif}
+.mono{font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:600}
+.wrap{max-width:1320px;margin:0 auto;padding:0 16px}
+@media(min-width:760px){.wrap{padding:0 40px}}
 
-/* loader: a polish brush stroke wipes the screen */
-#load{position:fixed;inset:0;z-index:99;background:var(--lac);display:grid;place-items:center;color:var(--paper)}
-#load span{font:italic 300 clamp(40px,8vw,110px)/1 Fraunces,serif}
+/* nav */
+nav{position:sticky;top:0;z-index:50;background:#f6f1ebee;backdrop-filter:saturate(1.4) blur(10px);-webkit-backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:60px}
+.logo{font:600 21px Fraunces,Georgia,serif;letter-spacing:-.02em}
+.logo i{color:var(--lac);font-style:normal}
+.nl{display:none;gap:26px;font-size:14px;font-weight:500}
+.nl a:hover{color:var(--lac)}
+@media(min-width:900px){.nl{display:flex}}
+.listbtn{display:flex;align-items:center;gap:8px;background:var(--ink);color:#fff;border-radius:999px;padding:9px 16px;font-size:14px;font-weight:600}
+.listbtn b{background:var(--lac);border-radius:999px;min-width:22px;height:22px;display:grid;place-items:center;font-size:12px}
 
-nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:16px clamp(16px,4vw,48px);mix-blend-mode:difference;color:#fff}
-nav .logo{font:600 20px Fraunces,serif;letter-spacing:-.02em}
-nav .links{display:flex;gap:28px}
-nav .links a{opacity:.85}
-@media(max-width:760px){nav .links a:not(.cta){display:none}}
-
-/* HERO */
-.hero{min-height:100svh;position:relative;display:grid;grid-template-columns:1.05fr 1fr;align-items:center;gap:2vw;padding:110px clamp(16px,4vw,48px) 60px;overflow:hidden}
-.hero h1{font:300 clamp(54px,9.4vw,168px)/.86 Fraunces,serif;letter-spacing:-.045em}
-.hero h1 em{font-style:italic;color:var(--lac)}
-.hero h1 .ln{display:block;overflow:hidden;padding-bottom:.06em}
-.hero h1 .ln>span{display:inline-block}
-.hero p.lead{max-width:440px;margin:28px 0 34px;font-size:18px;line-height:1.5;color:#3b3033}
-.btns{display:flex;gap:12px;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;gap:10px;padding:16px 26px;border-radius:999px;font-weight:600;font-size:15px;transition:transform .3s}
-.btn:hover{transform:translateY(-2px)}
-.btn.p{background:var(--lac);color:#fff}
-.btn.g{border:1px solid var(--ink)}
-.meta{display:flex;gap:28px;margin-top:40px;flex-wrap:wrap}
-.meta b{display:block;font:400 34px Fraunces,serif}
-/* reels arranged like nail tips on a display stick */
-.tips{position:relative;height:min(78vh,760px);display:flex;gap:14px;justify-content:center;align-items:center}
-.tip{position:relative;width:22%;aspect-ratio:9/16;border-radius:999px 999px 26px 26px;overflow:hidden;box-shadow:0 30px 60px -20px #5a0a1a66;background:var(--blush)}
+/* hero */
+.hero{display:grid;gap:28px;padding:28px 0 44px}
+@media(min-width:900px){.hero{grid-template-columns:1.05fr 1fr;align-items:center;min-height:calc(100svh - 60px);padding:40px 0}}
+.kick{color:var(--lac);margin-bottom:16px}
+h1{font:300 clamp(46px,9vw,140px)/.9 Fraunces,Georgia,serif;letter-spacing:-.045em}
+h1 em{font-style:italic;color:var(--lac)}
+.lead{max-width:460px;margin:20px 0 26px;font-size:17px;line-height:1.5;color:#3b3033}
+.btns{display:flex;gap:10px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:52px;padding:0 24px;border-radius:999px;font-weight:600;font-size:15px;transition:transform .2s,background .2s}
+.btn:active{transform:scale(.97)}
+.btn.p{background:var(--lac);color:#fff}.btn.p:hover{background:var(--lac2)}
+.btn.w{background:var(--wa);color:#fff}
+.btn.g{border:1.5px solid var(--ink)}
+.trust{display:flex;gap:22px;margin-top:28px;flex-wrap:wrap;font-size:13px;color:var(--mute)}
+.trust b{display:block;font:500 26px Fraunces,Georgia,serif;color:var(--ink)}
+/* reels as nail tips; only the 1st plays on phones */
+.tips{display:flex;gap:10px;justify-content:center;align-items:center}
+.tip{flex:1;max-width:190px;aspect-ratio:9/16;border-radius:999px 999px 22px 22px;overflow:hidden;background:var(--blush) center/cover;box-shadow:0 24px 44px -22px #5a0a1a80;position:relative}
 .tip video{width:100%;height:100%;object-fit:cover}
-.tip::after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,#fff7 0 8%,#fff0 22%);pointer-events:none}
-.tip:nth-child(1){transform:translateY(40px) rotate(-5deg)}
-.tip:nth-child(2){transform:translateY(-30px) rotate(-1.5deg);width:25%}
-.tip:nth-child(3){transform:translateY(20px) rotate(2deg);width:25%}
-.tip:nth-child(4){transform:translateY(-50px) rotate(6deg)}
-.tip .lbl{position:absolute;left:0;right:0;bottom:12px;text-align:center;color:#fff;font-size:10px;z-index:2;text-shadow:0 1px 6px #0008}
-@media(max-width:900px){.hero{grid-template-columns:1fr}.tips{height:auto;margin-top:20px}.tip{width:24%!important}}
+.tip:nth-child(odd){transform:translateY(24px)}
+.tip span{position:absolute;left:0;right:0;bottom:12px;text-align:center;color:#fff;font-size:10px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;text-shadow:0 1px 6px #000a}
+@media(max-width:899px){.tip:nth-child(n+4){display:none}}
 
-/* marquee */
-.marq{border-block:1px solid var(--ink);overflow:hidden;white-space:nowrap;padding:18px 0;background:var(--ink);color:var(--paper)}
-.marq div{display:inline-block;animation:mq 38s linear infinite;font:italic 300 clamp(28px,4vw,56px) Fraunces,serif}
-.marq i{color:var(--lac);font-style:normal;margin:0 .5em}
+/* marquee (transform only, GPU) */
+.marq{background:var(--ink);color:var(--paper);overflow:hidden;white-space:nowrap;padding:14px 0}
+.marq div{display:inline-block;animation:mq 40s linear infinite;font:italic 300 clamp(22px,3.4vw,44px) Fraunces,Georgia,serif;will-change:transform}
+.marq i{color:#ff5a72;font-style:normal;margin:0 .45em}
 @keyframes mq{to{transform:translateX(-50%)}}
 
-section{padding:clamp(80px,12vw,160px) 0}
-.eyebrow{display:flex;justify-content:space-between;border-top:1px solid var(--line);padding-top:14px;margin-bottom:46px;color:var(--mute)}
-h2{font:300 clamp(42px,6.4vw,104px)/.92 Fraunces,serif;letter-spacing:-.04em;max-width:15ch}
+section{padding:64px 0}
+@media(min-width:900px){section{padding:110px 0}}
+.eyebrow{display:flex;justify-content:space-between;gap:12px;border-top:1px solid var(--line);padding-top:12px;margin-bottom:22px;color:var(--mute)}
+h2{font:300 clamp(36px,6vw,88px)/.95 Fraunces,Georgia,serif;letter-spacing:-.04em;max-width:16ch}
 h2 em{color:var(--lac)}
 
-/* MAGNET SHADE WALL — move cursor, the cat-eye line follows like a real magnet */
-.wall{display:grid;grid-template-columns:repeat(12,1fr);gap:10px;margin-top:56px}
-.sw{aspect-ratio:3/4.4;border-radius:999px 999px 14px 14px;position:relative;cursor:pointer;background:var(--c);overflow:hidden;transition:transform .35s cubic-bezier(.2,.8,.2,1)}
-.sw::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 30% 80% at var(--mx,50%) 50%,#ffffffcc,#ffffff33 35%,transparent 60%);mix-blend-mode:overlay;opacity:var(--cat,0)}
-.sw::after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,#fff6 0 10%,transparent 25%)}
-.sw:hover{transform:translateY(-8px)}
-.sw.on{outline:2px solid var(--ink);outline-offset:3px}
-@media(max-width:760px){.wall{grid-template-columns:repeat(6,1fr)}}
-.wallbar{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-top:28px}
-.chips{display:flex;gap:8px;flex-wrap:wrap}
-.chip{border:1px solid var(--line);border-radius:999px;padding:9px 16px;font-size:13px;cursor:pointer;background:none;font-family:inherit}
-.chip.on{background:var(--ink);color:var(--paper)}
-#picked{color:var(--mute);font-size:14px}
+/* counters */
+.counters{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:28px}
+@media(min-width:900px){.counters{grid-template-columns:repeat(9,1fr)}}
+.ctr{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:10px;text-align:left;display:grid;gap:8px;transition:border-color .2s,transform .2s}
+.ctr:hover{border-color:var(--lac);transform:translateY(-3px)}
+.ctr img{aspect-ratio:1;object-fit:cover;border-radius:10px;width:100%;background:#eee}
+.ctr b{font-size:13px;line-height:1.2;font-weight:600}
+.ctr small{color:var(--mute);font-size:12px}
 
-/* CATEGORIES — index list with cursor photo peek */
-.idx{margin-top:60px;border-top:1px solid var(--ink)}
-.row{display:grid;grid-template-columns:70px 1fr auto;align-items:baseline;padding:26px 0;border-bottom:1px solid var(--line);position:relative;transition:padding .4s}
-.row h3{font:300 clamp(30px,4.4vw,64px)/1 Fraunces,serif;letter-spacing:-.03em;transition:color .3s,transform .4s}
-.row:hover h3{color:var(--lac);transform:translateX(14px)}
-.row small{color:var(--mute);font-size:14px;max-width:340px;text-align:right}
-@media(max-width:760px){.row{grid-template-columns:40px 1fr}.row small{grid-column:2;text-align:left;margin-top:8px}}
-#peek{position:fixed;width:220px;aspect-ratio:3/4;border-radius:120px 120px 16px 16px;overflow:hidden;pointer-events:none;z-index:40;opacity:0;transform:translate(-50%,-50%) scale(.8);transition:opacity .25s,transform .25s;box-shadow:0 30px 60px -20px #0006}
-#peek img{width:100%;height:100%;object-fit:cover}
-#peek.on{opacity:1;transform:translate(-50%,-50%) scale(1)}
+/* catalogue */
+.tools{position:sticky;top:60px;z-index:20;background:var(--paper);padding:12px 0;display:grid;gap:10px;margin-top:20px}
+.search{display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:0 18px;height:50px}
+.search input{flex:1;border:0;outline:0;background:none;font:inherit;font-size:16px}
+.chips{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding-bottom:2px}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;border:1px solid var(--line);border-radius:999px;padding:9px 15px;font-size:13px;font-weight:500;background:var(--card)}
+.chip.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:8px}
+@media(min-width:640px){.grid{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:1000px){.grid{grid-template-columns:repeat(5,1fr);gap:16px}}
+.pc{background:var(--card);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;border:1px solid var(--line);content-visibility:auto;contain-intrinsic-size:auto 320px}
+.pc .im{aspect-ratio:1;background:#f1ece8;overflow:hidden}
+.pc img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+@media(hover:hover){.pc:hover img{transform:scale(1.06)}}
+.pc .tx{padding:10px 12px 12px;display:flex;flex-direction:column;gap:4px;flex:1}
+.pc .br{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--lac);font-weight:600;min-height:12px}
+.pc h3{font-size:13.5px;line-height:1.3;font-weight:500;flex:1;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.pc .add{margin-top:8px;min-height:40px;border-radius:10px;border:1.5px solid var(--ink);font-size:13px;font-weight:600;transition:background .15s}
+.pc .add.on{background:var(--ink);color:#fff}
+.more{display:flex;justify-content:center;margin-top:24px}
+.empty{padding:40px 0;text-align:center;color:var(--mute);grid-column:1/-1}
+.note{font-size:12px;color:var(--mute);margin-top:14px}
 
-/* REELS strip */
+/* reels */
 .dark{background:var(--ink);color:var(--paper)}
-.dark .eyebrow{border-color:#fff2;color:#fff8}
-.reels{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:56px}
-.reel{border-radius:18px;overflow:hidden;aspect-ratio:9/16;position:relative;background:#2a2023}
+.dark .eyebrow{border-color:#fff2;color:#fff9}
+.reels{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:28px}
+@media(min-width:900px){.reels{grid-template-columns:repeat(4,1fr);gap:14px}}
+.reel{border-radius:16px;overflow:hidden;aspect-ratio:9/16;position:relative;background:#2a2023 center/cover}
 .reel video{width:100%;height:100%;object-fit:cover}
-.reel span{position:absolute;left:14px;bottom:14px;right:14px;font-size:14px}
-@media(max-width:760px){.reels{grid-template-columns:repeat(2,1fr)}}
+.reel span{position:absolute;left:12px;right:12px;bottom:12px;font-size:13px;font-weight:500;text-shadow:0 1px 8px #000}
 
-/* WHY */
-.why{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--ink);margin-top:60px}
-.why div{padding:30px 24px 30px 0;border-right:1px solid var(--line)}
-.why div:last-child{border:0}
-.why b{font:400 54px/1 Fraunces,serif;color:var(--lac);display:block;margin-bottom:18px}
-.why p{color:#3b3033;line-height:1.5;font-size:15px}
-@media(max-width:760px){.why{grid-template-columns:1fr 1fr}.why div{border-bottom:1px solid var(--line);padding-left:0}}
+/* why */
+.why{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--ink);margin-top:28px}
+@media(min-width:900px){.why{grid-template-columns:repeat(4,1fr)}}
+.why div{padding:22px 16px 22px 0;border-bottom:1px solid var(--line)}
+.why b{font:400 40px/1 Fraunces,Georgia,serif;color:var(--lac);display:block;margin-bottom:12px}
+.why p{color:#3b3033;line-height:1.5;font-size:14.5px}
 
-/* ORDER */
-.order{display:grid;grid-template-columns:1fr 1fr;gap:5vw;align-items:start}
-form{display:grid;gap:14px}
-label{display:grid;gap:6px;font-size:13px;color:var(--mute)}
-input,select,textarea{font:inherit;font-size:16px;color:var(--ink);background:transparent;border:0;border-bottom:1px solid var(--ink);padding:12px 0;outline:none}
+/* order */
+.order{display:grid;gap:36px}
+@media(min-width:900px){.order{grid-template-columns:1fr 1fr;gap:60px}}
+form{display:grid;gap:14px;background:var(--card);border-radius:20px;padding:22px;border:1px solid var(--line)}
+label{display:grid;gap:6px;font-size:13px;color:var(--mute);font-weight:500}
+input,select,textarea{font:inherit;font-size:16px;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:13px 14px;outline:none;width:100%}
 input:focus,textarea:focus,select:focus{border-color:var(--lac)}
-@media(max-width:860px){.order{grid-template-columns:1fr}}
-.map{border-radius:18px;overflow:hidden;filter:grayscale(.6) contrast(1.05);margin-top:30px;border:1px solid var(--line)}
-.map iframe{width:100%;height:280px;border:0;display:block}
+.listbox{font-size:14px;background:var(--blush);border-radius:12px;padding:12px 14px;color:var(--lac2)}
+.map{border-radius:18px;overflow:hidden;margin-top:22px;border:1px solid var(--line);background:#e9e2dc}
+.map iframe{width:100%;height:240px;border:0;display:block}
 
-footer{background:var(--lac);color:#fff;padding:80px 0 30px;overflow:hidden}
-footer .big{font:italic 300 clamp(70px,17vw,300px)/.8 Fraunces,serif;letter-spacing:-.05em;white-space:nowrap}
-footer .fl{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:40px;opacity:.85}
-.wa{position:fixed;right:18px;bottom:18px;z-index:60;width:58px;height:58px;border-radius:50%;background:#1faa55;display:grid;place-items:center;box-shadow:0 10px 30px #0004}
-.reveal{opacity:0;transform:translateY(40px)}
-/* cursor blob */
-#cur{position:fixed;left:0;top:0;width:14px;height:14px;border-radius:50%;background:var(--lac);z-index:98;pointer-events:none;transform:translate(-50%,-50%);display:grid;place-items:center;color:#fff;font:500 10px "JetBrains Mono",monospace;letter-spacing:.1em;transition:width .3s,height .3s,background .3s}
-#cur.big{width:86px;height:86px}
-@media(hover:none){#cur{display:none}}
-/* scroll-expand film (ref: Pinterest 'luxury product scroll animation' / D&G scent) */
-.film{height:260vh;position:relative}
-.film .stick{position:sticky;top:0;height:100svh;display:grid;place-items:center;overflow:hidden}
-.film .frame{width:26vw;aspect-ratio:9/16;border-radius:999px 999px 30px 30px;overflow:hidden;position:relative;will-change:width,border-radius}
-.film video{width:100%;height:100%;object-fit:cover}
-.film .cap{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;color:#fff;text-align:center;pointer-events:none;mix-blend-mode:difference}
-.film .cap b{font:300 clamp(50px,11vw,190px)/.85 Fraunces,serif;letter-spacing:-.05em}
-/* pinned colour slider (ref: Pinterest 'Skincare — Slider' dribbble) */
-.slide{height:400vh;position:relative}
-.slide .stick{position:sticky;top:0;height:100svh;overflow:hidden;transition:background .6s}
-.track{display:flex;height:100%;align-items:center;gap:6vw;padding:0 20vw;will-change:transform}
-.card{flex:0 0 min(420px,70vw);display:grid;gap:22px;color:#fff}
-.bottle{width:44%;margin:auto;aspect-ratio:3/5;position:relative}
-.bottle .cap2{width:40%;height:30%;margin:0 auto;background:#1a1214;border-radius:10px 10px 4px 4px}
-.bottle .body{height:70%;border-radius:30px;background:var(--c);box-shadow:inset -20px 0 40px #0004,inset 18px 0 30px #fff3,0 40px 60px -20px #0008;position:relative;display:grid;place-items:center}
-.bottle .body span{font:italic 400 22px Fraunces,serif;color:#fffc}
-.card h3{font:300 clamp(36px,4vw,60px)/.95 Fraunces,serif;letter-spacing:-.03em}
-.card p{opacity:.8;line-height:1.5}
-.slide .count{position:absolute;left:clamp(16px,4vw,48px);bottom:30px;color:#fff}
-.slide .head{position:absolute;left:clamp(16px,4vw,48px);top:90px;color:#fff;font:300 clamp(30px,4vw,60px)/1 Fraunces,serif}
-/* drip divider */
-.drip{display:block;width:100%;height:120px;margin-top:-1px}
-.ch{display:inline-block}
-@media(prefers-reduced-motion:reduce){.marq div{animation:none}.reveal{opacity:1;transform:none}}
+footer{background:var(--lac);color:#fff;padding:56px 0 28px;overflow:hidden}
+footer .big{font:italic 300 clamp(64px,16vw,260px)/.8 Fraunces,Georgia,serif;letter-spacing:-.05em;white-space:nowrap}
+footer .fl{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-top:32px;font-size:13px;opacity:.9}
+
+/* mobile conversion bar */
+.mbar{position:fixed;left:0;right:0;bottom:0;z-index:60;display:grid;grid-template-columns:1fr 1.4fr 1fr;gap:8px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:#fffffff2;border-top:1px solid var(--line);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.mbar a,.mbar button{min-height:50px;border-radius:14px;display:flex;align-items:center;justify-content:center;gap:6px;font-weight:600;font-size:14px}
+.mbar .c{border:1.5px solid var(--ink)}
+.mbar .w{background:var(--wa);color:#fff}
+.mbar .l{background:var(--ink);color:#fff}
+.mbar .l b{background:var(--lac);border-radius:999px;min-width:20px;height:20px;display:grid;place-items:center;font-size:11px}
+@media(min-width:900px){.mbar{display:none}}
+.waf{display:none}
+@media(min-width:900px){.waf{display:grid;position:fixed;right:22px;bottom:22px;z-index:60;width:58px;height:58px;border-radius:50%;background:var(--wa);place-items:center;box-shadow:0 10px 30px #0004}}
+
+/* enquiry drawer */
+.dw{position:fixed;inset:0;z-index:80;visibility:hidden}
+.dw.on{visibility:visible}
+.dw .bg{position:absolute;inset:0;background:#0007;opacity:0;transition:opacity .25s}
+.dw.on .bg{opacity:1}
+.dw .pn{position:absolute;right:0;bottom:0;width:100%;max-width:440px;max-height:85svh;background:var(--paper);border-radius:22px 22px 0 0;display:flex;flex-direction:column;transform:translateY(100%);transition:transform .3s cubic-bezier(.2,.8,.2,1)}
+@media(min-width:900px){.dw .pn{top:0;max-height:none;border-radius:0;transform:translateX(100%)}}
+.dw.on .pn{transform:none}
+.dw header{display:flex;justify-content:space-between;align-items:center;padding:18px 20px;border-bottom:1px solid var(--line)}
+.dw ul{list-style:none;overflow:auto;flex:1;padding:8px 20px}
+.dw li{display:grid;grid-template-columns:52px 1fr auto;gap:12px;align-items:center;padding:10px 0;border-bottom:1px solid var(--line);font-size:14px}
+.dw li img{width:52px;height:52px;border-radius:10px;object-fit:cover}
+.dw li button{font-size:20px;color:var(--mute);padding:6px}
+.dw .ft{padding:16px 20px calc(16px + env(safe-area-inset-bottom));display:grid;gap:8px}
+.toast{position:fixed;left:50%;bottom:92px;transform:translate(-50%,20px);background:var(--ink);color:#fff;padding:10px 18px;border-radius:999px;font-size:14px;opacity:0;transition:.25s;z-index:90;pointer-events:none}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+@media(min-width:900px){.toast{bottom:30px}}
+
+/* reveal: one IntersectionObserver, CSS-only motion */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .8s,transform .8s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.marq div{animation:none}.rv{opacity:1;transform:none}}
 </style>
 </head>
 <body>
-<div id="load"><span>Nail&nbsp;Mart</span></div>
 
-<nav>
-  <a href="#" class="logo">Nail Mart<sup class="mono" style="font-size:8px"> DEL</sup></a>
-  <div class="links mono"><a href="#shades">Shades</a><a href="#range">Range</a><a href="#reels">Reels</a><a href="#order" class="cta">Order ↗</a></div>
-</nav>
+<nav><div class="wrap">
+  <a href="#" class="logo">Nail<i>.</i>Mart</a>
+  <div class="nl"><a href="#catalogue">Catalogue</a><a href="#reels">Reels</a><a href="#why">Why us</a><a href="#order">Visit &amp; order</a></div>
+  <button class="listbtn" data-open>List <b class="lc">0</b></button>
+</div></nav>
 
-<header class="hero">
+<header class="wrap hero">
   <div>
-    <p class="mono" style="color:var(--lac);margin-bottom:26px">● Wholesale nail art supplies · New Delhi · Ships all-India</p>
-    <h1><span class="ln"><span>Every</span></span><span class="ln"><span><em>shade</em> your</span></span><span class="ln"><span>salon needs.</span></span></h1>
-    <p class="lead">Gel polish, cat-eye magnets, tips, tools and machines — stocked in Mahavir Enclave and dispatched to nail artists across India at wholesale rates.</p>
+    <p class="mono kick">● Wholesale nail art supplies · New Delhi</p>
+    <h1>Everything your <em>nail bar</em> needs.</h1>
+    <p class="lead">Gel polish, cat-eye, builder gels, tips, stickers, tools, drills and lamps. Pick what you need, send the list, and we'll WhatsApp you wholesale rates. Delivery all over India.</p>
     <div class="btns">
-      <a class="btn p" href="#order">Get the wholesale list →</a>
-      <a class="btn g" href="#shades">Browse shades</a>
+      <a class="btn p" href="#catalogue">Browse 200+ products →</a>
+      <a class="btn w" href="https://wa.me/918802395525?text=Hi%20Nail%20Mart!%20Please%20share%20your%20wholesale%20rate%20list." target="_blank" rel="noopener">WhatsApp us</a>
     </div>
-    <div class="meta">
-      <div><b>5.0★</b><span class="mono">Google · 25 reviews</span></div>
-      <div><b>689+</b><span class="mono">Products posted</span></div>
-      <div><b>All‑India</b><span class="mono">Delivery</span></div>
+    <div class="trust">
+      <div><b>5.0★</b>Google rating</div>
+      <div><b>200+</b>Products</div>
+      <div><b>All-India</b>Delivery</div>
     </div>
   </div>
   <div class="tips">
-    <div class="tip"><video src="media/h1.mp4" poster="media/p1.jpg" autoplay muted loop playsinline></video><span class="lbl mono">Cat-eye 30-A</span></div>
-    <div class="tip"><video src="media/h4.mp4" poster="media/p4.jpg" autoplay muted loop playsinline></video><span class="lbl mono">Breezia gel</span></div>
-    <div class="tip"><video src="media/h2.mp4" poster="media/p2.jpg" autoplay muted loop playsinline></video><span class="lbl mono">Glass bead</span></div>
-    <div class="tip"><video src="media/h3.mp4" poster="media/p3.jpg" autoplay muted loop playsinline></video><span class="lbl mono">Sandwich tips</span></div>
+    <div class="tip" style="background-image:url(media/p1.jpg)"><video data-src="media/h1.mp4" muted loop playsinline preload="none"></video><span>Cat-eye</span></div>
+    <div class="tip" style="background-image:url(media/p4.jpg)"><video data-src="media/h4.mp4" muted loop playsinline preload="none"></video><span>Gel polish</span></div>
+    <div class="tip" style="background-image:url(media/p2.jpg)"><video data-src="media/h2.mp4" muted loop playsinline preload="none"></video><span>Glass bead</span></div>
+    <div class="tip" style="background-image:url(media/p3.jpg)"><video data-src="media/h3.mp4" muted loop playsinline preload="none"></video><span>Tips</span></div>
   </div>
 </header>
 
-<div class="marq"><div>Gel Polish <i>✦</i> Cat-Eye Magnets <i>✦</i> Sandwich Tips <i>✦</i> Press-On Boxes <i>✦</i> Pearl Stones <i>✦</i> Cuticle Tools <i>✦</i> PMU Machines <i>✦</i> Gel Polish <i>✦</i> Cat-Eye Magnets <i>✦</i> Sandwich Tips <i>✦</i> Press-On Boxes <i>✦</i> Pearl Stones <i>✦</i> Cuticle Tools <i>✦</i> PMU Machines <i>✦</i></div></div>
+<div class="marq" aria-hidden="true"><div>Gel Polish <i>✦</i> Cat-Eye <i>✦</i> Builder Gel <i>✦</i> Sandwich Tips <i>✦</i> Press-Ons <i>✦</i> Stickers <i>✦</i> Charms <i>✦</i> Drills &amp; Lamps <i>✦</i> Gel Polish <i>✦</i> Cat-Eye <i>✦</i> Builder Gel <i>✦</i> Sandwich Tips <i>✦</i> Press-Ons <i>✦</i> Stickers <i>✦</i> Charms <i>✦</i> Drills &amp; Lamps <i>✦</i></div></div>
 
-<div class="film" id="film"><div class="stick">
-  <div class="frame"><video src="media/h1.mp4" poster="media/p1.jpg" autoplay muted loop playsinline></video></div>
-  <div class="cap"><span class="mono">Scroll to swatch</span><b>36 cat-eyes.<br><i>One counter.</i></b></div>
-</div></div>
-
-<div class="slide" id="slide"><div class="stick" style="background:#7a0a1f">
-  <div class="head">This season on the counter</div>
-  <div class="track" id="track"></div>
-  <div class="count mono"><span id="cn">01</span> / 05 — drag the page, not your feet</div>
-</div></div>
-<svg class="drip" viewBox="0 0 1440 120" preserveAspectRatio="none"><path id="dripP" fill="#7a0a1f" d="M0 0H1440V20C1380 20 1370 40 1360 40 1350 40 1345 20 1300 20H1100C1060 20 1055 90 1040 90 1025 90 1020 20 980 20H700C660 20 655 60 640 60 625 60 620 20 580 20H300C260 20 255 110 240 110 225 110 220 20 180 20H0Z"/></svg>
-
-<section id="shades">
+<section id="catalogue">
   <div class="wrap">
-    <div class="eyebrow mono"><span>01 — The shade wall</span><span>Move your cursor: it's a magnet</span></div>
-    <h2 class="reveal">Hold a <em>magnet</em> over the wall.</h2>
-    <div class="wallbar">
-      <div class="chips" id="fam"></div>
-      <span id="picked">Tap shades to add them to your order list.</span>
+    <div class="eyebrow mono"><span>01 — Catalogue</span><span id="total"></span></div>
+    <h2 class="rv">Shop the <em>counter</em>.</h2>
+    <div class="counters" id="ctrs"></div>
+    <div class="tools">
+      <label class="search" aria-label="Search products"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="q" type="search" placeholder="Search cat eye, builder gel, drill…" autocomplete="off"></label>
+      <div class="chips" id="chips"></div>
     </div>
-    <div class="wall" id="wall"></div>
+    <div class="grid" id="grid"></div>
+    <div class="more"><button class="btn g" id="more">Show more</button></div>
+    <p class="note">Tap <b>+ Add</b> on anything you need, then send the list on WhatsApp for current wholesale rates and stock.</p>
   </div>
 </section>
-
-<section id="range" style="padding-top:0">
-  <div class="wrap">
-    <div class="eyebrow mono"><span>02 — The range</span><span>Wholesale &amp; single pieces</span></div>
-    <h2 class="reveal">One counter for the <em>whole</em> nail bar.</h2>
-    <div class="idx" id="idx"></div>
-  </div>
-</section>
-<div id="peek"><img alt=""></div>
 
 <section id="reels" class="dark">
   <div class="wrap">
-    <div class="eyebrow mono"><span>03 — Straight from the counter</span><a href="https://www.instagram.com/nail_mart_india/" target="_blank" rel="noopener">@nail_mart_india ↗</a></div>
-    <h2 class="reveal">See it <em style="color:#ff6b80">swatched</em>, not just listed.</h2>
+    <div class="eyebrow mono"><span>02 — From the counter</span><a href="https://www.instagram.com/nail_mart_india/" target="_blank" rel="noopener">@nail_mart_india ↗</a></div>
+    <h2 class="rv">See it <em style="color:#ff6b80">swatched</em> first.</h2>
     <div class="reels">
-      <div class="reel"><video src="media/h1.mp4" poster="media/p1.jpg" muted loop playsinline></video><span>Uomi cat-eye · 36 colours</span></div>
-      <div class="reel"><video src="media/h2.mp4" poster="media/p2.jpg" muted loop playsinline></video><span>Glass bead effect</span></div>
-      <div class="reel"><video src="media/h3.mp4" poster="media/p3.jpg" muted loop playsinline></video><span>Sandwich nail tip shape</span></div>
-      <div class="reel"><video src="media/h4.mp4" poster="media/p4.jpg" muted loop playsinline></video><span>Breezia single polish</span></div>
+      <div class="reel" style="background-image:url(media/p1.jpg)"><video data-src="media/h1.mp4" muted loop playsinline preload="none"></video><span>Uomi cat-eye · 36 colours</span></div>
+      <div class="reel" style="background-image:url(media/p2.jpg)"><video data-src="media/h2.mp4" muted loop playsinline preload="none"></video><span>Glass bead effect</span></div>
+      <div class="reel" style="background-image:url(media/p3.jpg)"><video data-src="media/h3.mp4" muted loop playsinline preload="none"></video><span>Sandwich nail tips</span></div>
+      <div class="reel" style="background-image:url(media/p4.jpg)"><video data-src="media/h4.mp4" muted loop playsinline preload="none"></video><span>Breezia single polish</span></div>
     </div>
   </div>
 </section>
 
-<section>
+<section id="why">
   <div class="wrap">
-    <div class="eyebrow mono"><span>04 — Why salons restock here</span><span>Delhi · since day one</span></div>
-    <h2 class="reveal">Priced for <em>artists</em>, not shelves.</h2>
+    <div class="eyebrow mono"><span>03 — Why salons restock here</span><span>Delhi</span></div>
+    <h2 class="rv">Priced for <em>artists</em>, not shelves.</h2>
     <div class="why">
-      <div><b>01</b><p>Wholesale rates for salons, academies and resellers — single pieces too.</p></div>
-      <div><b>02</b><p>Swatch videos for new arrivals before you order, so the colour is never a guess.</p></div>
-      <div><b>03</b><p>Dispatch all over India. Delhi NCR pick-up from Mahavir Enclave.</p></div>
+      <div><b>01</b><p>Wholesale rates for salons, academies and resellers. Single pieces too.</p></div>
+      <div><b>02</b><p>Swatch videos for new arrivals, so the colour is never a guess.</p></div>
+      <div><b>03</b><p>Dispatch all over India. Pick-up in Mahavir Enclave.</p></div>
       <div><b>04</b><p>Order on WhatsApp. One message, a real person, a confirmed price.</p></div>
     </div>
   </div>
@@ -247,17 +246,18 @@ footer .fl{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;ma
 <section id="order" style="padding-top:0">
   <div class="wrap order">
     <div>
-      <div class="eyebrow mono"><span>05 — Order</span><span>Reply within the hour</span></div>
-      <h2 class="reveal">Send your list. Get the <em>rate</em>.</h2>
-      <p style="margin-top:24px;color:#3b3033;line-height:1.6;max-width:420px">RZ-7 &amp; 8B, Gurudwara Road, Mahavir Enclave, New Delhi 110045<br><a href="tel:+918802395525" style="color:var(--lac);font-weight:600">+91 88023 95525</a></p>
-      <div class="map"><iframe loading="lazy" title="Map" src="https://www.google.com/maps?q=Nail+Mart+Mahavir+Enclave+New+Delhi+110045&output=embed"></iframe></div>
+      <div class="eyebrow mono"><span>04 — Visit &amp; order</span><span>Mon–Sat</span></div>
+      <h2 class="rv">Send your list. Get the <em>rate</em>.</h2>
+      <p style="margin-top:18px;color:#3b3033;line-height:1.6">RZ-7 &amp; 8B, Gurudwara Road, Mahavir Enclave, New Delhi 110045<br><a href="tel:+918802395525" style="color:var(--lac);font-weight:600">+91 88023 95525</a></p>
+      <div class="map" id="map"><button class="btn g" style="margin:96px auto;display:flex" onclick="this.parentNode.innerHTML='<iframe title=Map src=&quot;https://www.google.com/maps?q=Mahavir+Enclave+Gurudwara+Road+New+Delhi+110045&amp;output=embed&quot;></iframe>'">Show map</button></div>
     </div>
     <form id="f">
-      <label>Your name / salon<input name="n" required></label>
-      <label>City<input name="c" required></label>
+      <label>Your name / salon<input name="n" required autocomplete="name"></label>
+      <label>City<input name="c" required autocomplete="address-level2"></label>
       <label>I am a<select name="t"><option>Salon / nail studio</option><option>Nail artist</option><option>Academy</option><option>Reseller</option></select></label>
-      <label>What do you need?<textarea name="m" rows="4" placeholder="e.g. 36-colour cat-eye set, 2 boxes sandwich tips"></textarea></label>
-      <button class="btn p" style="border:0;cursor:pointer;justify-self:start">Send on WhatsApp →</button>
+      <div class="listbox" id="lb">Your list is empty. Add products from the catalogue, or just type below.</div>
+      <label>Anything else?<textarea name="m" rows="3" placeholder="e.g. 2 boxes sandwich tips, 36-colour cat-eye set"></textarea></label>
+      <button class="btn w">Send on WhatsApp →</button>
     </form>
   </div>
 </section>
@@ -265,72 +265,73 @@ footer .fl{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;ma
 <footer>
   <div class="wrap">
     <div class="big">Nail Mart</div>
-    <div class="fl mono"><span>© Nail Mart · Nail art products · New Delhi</span><span>+91 88023 95525</span><a href="https://www.instagram.com/nail_mart_india/">Instagram ↗</a></div>
+    <div class="fl"><span>© Nail Mart · Nail art products · New Delhi</span><a href="tel:+918802395525">+91 88023 95525</a><a href="https://www.instagram.com/nail_mart_india/">Instagram ↗</a></div>
   </div>
 </footer>
-<a class="wa" href="https://wa.me/918802395525" aria-label="WhatsApp"><svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.2.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l2 .9c.3.2.5.2.5.4.1.1.1.7-.1 1.3z"/></svg></a>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<div class="mbar">
+  <a class="c" href="tel:+918802395525">Call</a>
+  <a class="w" href="https://wa.me/918802395525?text=Hi%20Nail%20Mart!%20Please%20share%20your%20wholesale%20rate%20list." target="_blank" rel="noopener">WhatsApp</a>
+  <button class="l" data-open>List <b class="lc">0</b></button>
+</div>
+<a class="waf" href="https://wa.me/918802395525" target="_blank" rel="noopener" aria-label="WhatsApp"><svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.2.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l2 .9c.3.2.5.2.5.4.1.1.1.7-.1 1.3z"/></svg></a>
+
+<div class="dw" id="dw" aria-hidden="true">
+  <div class="bg" data-close></div>
+  <div class="pn" role="dialog" aria-label="Enquiry list">
+    <header><b class="serif" style="font-size:22px">Your list</b><button data-close aria-label="Close" style="font-size:26px">×</button></header>
+    <ul id="dl"></ul>
+    <div class="ft"><button class="btn w" id="send">Send list on WhatsApp →</button><a class="btn g" href="#order" data-close>Add name &amp; city first</a></div>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+
+<script src="products.js"></script>
 <script>
-const WA='918802395525';
-// Shade wall — demo shade names; replace with real stock codes
-const FAM={Nudes:['#e8c4b4','#d9a99a','#c99282','#b67b6c','#a6705f','#8f5a4c'],Reds:['#b3122e','#8e0f22','#d1263a','#6d0a18','#c2402f','#9a1b2b'],Pinks:['#f2a7b8','#e7799a','#d4527a','#f6c6d2','#c23c6b','#ff8fab'],Darks:['#3a1c25','#26151c','#4b2a3a','#1d1b2b','#3f2b23','#2b0f17'],'Cat-eye':['#5b3a7a','#2f4a7d','#7a1f3d','#355e4c','#6b5a3c','#40324f']};
-const wall=document.getElementById('wall'),fam=document.getElementById('fam'),picked=document.getElementById('picked');let sel=new Set();
-function draw(f){wall.innerHTML='';const list=f==='All'?Object.entries(FAM).flatMap(([k,v])=>v.map((c,i)=>[k,c,i])):FAM[f].map((c,i)=>[f,c,i]);
- list.forEach(([k,c,i])=>{const d=document.createElement('div');d.className='sw';d.style.setProperty('--c',c);d.style.setProperty('--cat',k==='Cat-eye'?1:.35);const id=k.slice(0,2).toUpperCase()+'-'+String(i+1).padStart(2,'0');d.title=id;d.dataset.id=id;if(sel.has(id))d.classList.add('on');
- d.onclick=()=>{sel.has(id)?sel.delete(id):sel.add(id);d.classList.toggle('on');picked.textContent=sel.size?`${sel.size} shade${sel.size>1?'s':''} picked: ${[...sel].join(', ')}`:'Tap shades to add them to your order list.'};wall.appendChild(d)})}
-['All',...Object.keys(FAM)].forEach((f,i)=>{const b=document.createElement('button');b.className='chip'+(i?'':' on');b.textContent=f;b.onclick=()=>{fam.querySelectorAll('.chip').forEach(x=>x.classList.remove('on'));b.classList.add('on');draw(f)};fam.appendChild(b)});draw('All');
-// magnet: the cat-eye band follows the pointer across the whole wall
-wall.addEventListener('pointermove',e=>{for(const s of wall.children){const r=s.getBoundingClientRect();s.style.setProperty('--mx',((e.clientX-r.left)/r.width*100)+'%')}});
+const WA='918802395525',$=s=>document.querySelector(s),$$=s=>document.querySelectorAll(s);
+const CATS=[...new Set(P.map(p=>p.c))];
+let cat='All',q='',shown=20;
+let list=[];try{list=JSON.parse(localStorage.nmList||'[]')}catch(e){}
+const save=()=>{try{localStorage.nmList=JSON.stringify(list)}catch(e){}};
+$('#total').textContent=P.length+' products';
 
-// Range index with photo peek
-const R=[['Gel polish','Breezia, Uomi & more — single bottles and full sets','media/p4.jpg'],['Cat-eye & magnets','36-colour cat-eye sets, French magnets, glass bead effect','media/p1.jpg'],['Tips & press-ons','Sandwich tips, soft-gel tips, press-on boxes','media/i3.jpg'],['Stones & charms','Gold and silver pearl stones, 3D decor','media/p2.jpg'],['Tools','Cuticle pushers, files, brushes, dotting tools','media/i2.jpg'],['Machines','Microblading, eyebrow, tattoo & lip-shading machines','media/i1.jpg']];
-const idx=document.getElementById('idx'),peek=document.getElementById('peek'),pi=peek.querySelector('img');
-R.forEach(([t,d,img],i)=>{const a=document.createElement('a');a.className='row';a.href='#order';a.innerHTML=`<span class="mono">0${i+1}</span><h3>${t}</h3><small>${d}</small>`;a.onmouseenter=()=>{pi.src=img;peek.classList.add('on')};a.onmouseleave=()=>peek.classList.remove('on');a.onclick=()=>{document.querySelector('[name=m]').value=t+': '};idx.appendChild(a)});
-addEventListener('pointermove',e=>{peek.style.left=e.clientX+'px';peek.style.top=e.clientY+'px'});
+// counters: first product image of each category
+$('#ctrs').innerHTML=CATS.map(c=>{const ps=P.filter(p=>p.c===c);return `<button class="ctr" data-c="${c}"><img src="${ps[0].i}" alt="" loading="lazy" width="120" height="120"><b>${c}</b><small>${ps.length} items</small></button>`}).join('');
+$('#chips').innerHTML=['All',...CATS].map(c=>`<button class="chip${c==='All'?' on':''}" data-c="${c}">${c}</button>`).join('');
 
-// order -> WhatsApp
-document.getElementById('f').onsubmit=e=>{e.preventDefault();const f=new FormData(e.target);const msg=`Hi Nail Mart! I'm ${f.get('n')} (${f.get('t')}, ${f.get('c')}).\n${f.get('m')}${sel.size?'\nShades: '+[...sel].join(', '):''}\nPlease share wholesale rates.`;open(`https://wa.me/${WA}?text=${encodeURIComponent(msg)}`,'_blank')};
+function filtered(){const t=q.toLowerCase();return P.map((p,i)=>({...p,id:i})).filter(p=>(cat==='All'||p.c===cat)&&(!t||(p.n+' '+p.b+' '+p.c).toLowerCase().includes(t)))}
+function render(){const f=filtered();
+ $('#grid').innerHTML=f.length?f.slice(0,shown).map(p=>`<article class="pc"><div class="im"><img src="${p.i}" alt="${p.n.replace(/"/g,'')}" loading="lazy" decoding="async" width="480" height="480"></div><div class="tx"><span class="br">${p.b||p.c}</span><h3>${p.n}</h3><button class="add${list.includes(p.id)?' on':''}" data-id="${p.id}">${list.includes(p.id)?'✓ In list':'+ Add'}</button></div></article>`).join(''):'<p class="empty">Nothing matches — WhatsApp us, we probably still have it.</p>';
+ $('#more').style.display=f.length>shown?'':'none'}
+function setCat(c){cat=c;shown=20;$$('.chip').forEach(x=>{const on=x.dataset.c===c;x.classList.toggle('on',on);if(on)x.parentNode.scrollTo({left:x.offsetLeft-16,behavior:'smooth'})});render()}
+$('#chips').onclick=e=>{const b=e.target.closest('.chip');if(b)setCat(b.dataset.c)};
+$('#ctrs').onclick=e=>{const b=e.target.closest('.ctr');if(b){setCat(b.dataset.c);$('.tools').scrollIntoView({behavior:'smooth'})}};
+let tq;$('#q').oninput=e=>{clearTimeout(tq);tq=setTimeout(()=>{q=e.target.value.trim();shown=20;render()},150)};
+$('#more').onclick=()=>{shown+=20;render()};
 
-// play reels only when visible
-const io=new IntersectionObserver(es=>es.forEach(x=>x.isIntersecting?x.target.play().catch(()=>{}):x.target.pause()),{threshold:.3});
-document.querySelectorAll('.reel video').forEach(v=>io.observe(v));
+// enquiry list
+function toast(t){const el=$('#toast');el.textContent=t;el.classList.add('on');clearTimeout(el._t);el._t=setTimeout(()=>el.classList.remove('on'),1600)}
+function sync(){$$('.lc').forEach(x=>x.textContent=list.length);
+ $('#dl').innerHTML=list.length?list.map(id=>`<li><img src="${P[id].i}" alt=""><span>${P[id].n}</span><button data-rm="${id}" aria-label="Remove">×</button></li>`).join(''):'<li style="display:block;color:var(--mute)">Nothing yet. Tap “+ Add” on products.</li>';
+ $('#lb').textContent=list.length?list.length+' item(s): '+list.map(id=>P[id].n).join(' · '):'Your list is empty. Add products from the catalogue, or just type below.';save()}
+$('#grid').onclick=e=>{const b=e.target.closest('.add');if(!b)return;const id=+b.dataset.id,k=list.indexOf(id);
+ if(k<0){list.push(id);b.classList.add('on');b.textContent='✓ In list';toast('Added · '+list.length+' in list')}else{list.splice(k,1);b.classList.remove('on');b.textContent='+ Add'}sync()};
+$('#dl').onclick=e=>{const b=e.target.closest('[data-rm]');if(!b)return;list.splice(list.indexOf(+b.dataset.rm),1);sync();render()};
+const dw=$('#dw');
+$$('[data-open]').forEach(b=>b.onclick=()=>{dw.classList.add('on');dw.setAttribute('aria-hidden','false')});
+$$('[data-close]').forEach(b=>b.addEventListener('click',()=>{dw.classList.remove('on');dw.setAttribute('aria-hidden','true')}));
+const msg=(who='')=>`Hi Nail Mart!${who}\nPlease share wholesale rates for:\n${list.map((id,i)=>`${i+1}. ${P[id].n}`).join('\n')}`;
+$('#send').onclick=()=>{if(!list.length)return toast('Add a product first');open(`https://wa.me/${WA}?text=${encodeURIComponent(msg())}`,'_blank')};
+$('#f').onsubmit=e=>{e.preventDefault();const f=new FormData(e.target);let t=`Hi Nail Mart! I'm ${f.get('n')} (${f.get('t')}, ${f.get('c')}).`;
+ if(list.length)t+=`\nPlease share wholesale rates for:\n${list.map((id,i)=>`${i+1}. ${P[id].n}`).join('\n')}`;if(f.get('m'))t+='\n'+f.get('m');open(`https://wa.me/${WA}?text=${encodeURIComponent(t)}`,'_blank')};
+render();sync();
 
-gsap.registerPlugin(ScrollTrigger);
-// colour slider cards
-const S=[['Uomi Cat-Eye','#5b3a7a','36-colour set. Magnetic shimmer that moves with the light.'],['Breezia Gel','#b3122e','Single bottles in every shade family. Salon-grade cure.'],['French Magnet','#2f4a7d','The line that makes cat-eye look expensive.'],['Glass Bead','#c2407a','Rotate the magnet, watch the bead effect bloom.'],['Nude Edit','#a6705f','Skin-tone nudes for bridal and everyday sets.']];
-const track=document.getElementById('track');S.forEach(([n,c,d])=>track.insertAdjacentHTML('beforeend',`<div class="card" data-c="${c}"><div class="bottle"><div class="cap2"></div><div class="body" style="--c:${c}"><span>NM</span></div></div><h3>${n}</h3><p>${d}</p></div>`));
-
-// cursor blob
-const cur=document.createElement('div');cur.id='cur';document.body.appendChild(cur);
-addEventListener('pointermove',e=>gsap.to(cur,{x:e.clientX,y:e.clientY,duration:.35,ease:'power3'}));
-document.querySelectorAll('.reel,.tip,.row,.frame').forEach(el=>{el.addEventListener('mouseenter',()=>{cur.classList.add('big');cur.textContent=el.classList.contains('row')?'ORDER':'VIEW'});el.addEventListener('mouseleave',()=>{cur.classList.remove('big');cur.textContent=''})});
-// magnetic buttons
-document.querySelectorAll('.btn').forEach(b=>{b.addEventListener('mousemove',e=>{const r=b.getBoundingClientRect();gsap.to(b,{x:(e.clientX-r.left-r.width/2)*.3,y:(e.clientY-r.top-r.height/2)*.4,duration:.4})});b.addEventListener('mouseleave',()=>gsap.to(b,{x:0,y:0,duration:.6,ease:'elastic.out(1,.4)'}))});
-// split h2 into words for staggered rise
-document.querySelectorAll('h2.reveal').forEach(h=>{h.classList.remove('reveal');h.innerHTML=h.innerHTML.replace(/(<em[^>]*>.*?<\/em>|[^\s<]+)/g,'<span style="display:inline-block;overflow:hidden;vertical-align:top"><span class="ch">$1</span></span>');gsap.from(h.querySelectorAll('.ch'),{yPercent:110,stagger:.05,duration:1,ease:'expo.out',scrollTrigger:{trigger:h,start:'top 85%'}})});
-
-// motion
-gsap.registerPlugin(ScrollTrigger);
-const lenis=new Lenis();lenis.on('scroll',ScrollTrigger.update);gsap.ticker.add(t=>lenis.raf(t*1000));gsap.ticker.lagSmoothing(0);
-// film: arched tip grows to full-bleed
-gsap.timeline({scrollTrigger:{trigger:'#film',start:'top top',end:'bottom bottom',scrub:true}})
-  .to('#film .frame',{width:'100vw',height:'100svh',aspectRatio:'auto',borderRadius:0,ease:'none'})
-  .from('#film .cap b',{scale:.6,opacity:0,ease:'none'},0);
-// slider: horizontal pin, background takes each polish colour
-const cards=gsap.utils.toArray('.card');
-gsap.to(track,{x:()=>-(track.scrollWidth-innerWidth),ease:'none',scrollTrigger:{trigger:'#slide',start:'top top',end:'bottom bottom',scrub:true,invalidateOnRefresh:true,
- onUpdate:s=>{const i=Math.min(cards.length-1,Math.round(s.progress*(cards.length-1)));const st=document.querySelector('#slide .stick');const c=cards[i].dataset.c;if(st.dataset.i!=i){st.dataset.i=i;st.style.background=c;document.getElementById('dripP').setAttribute('fill',c);document.getElementById('cn').textContent='0'+(i+1)}}}});
-cards.forEach(c=>gsap.fromTo(c.querySelector('.bottle'),{rotate:-8},{rotate:8,ease:'none',scrollTrigger:{trigger:'#slide',start:'top top',end:'bottom bottom',scrub:true}}));
-const tl=gsap.timeline();
-tl.to('#load span',{y:-30,opacity:0,duration:.5,delay:.5}).to('#load',{clipPath:'inset(0 0 100% 0)',duration:.8,ease:'expo.inOut'}).set('#load',{display:'none'})
-  .from('.hero h1 .ln>span',{yPercent:110,stagger:.08,duration:1,ease:'expo.out'},'-=.3')
-  .from('.tip',{y:200,opacity:0,stagger:.08,duration:1.1,ease:'expo.out'},'<');
-gsap.utils.toArray('.reveal').forEach(el=>gsap.to(el,{opacity:1,y:0,duration:1,ease:'expo.out',scrollTrigger:{trigger:el,start:'top 85%'}}));
-gsap.to('.tips',{yPercent:-12,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
-gsap.from('.sw',{y:60,opacity:0,stagger:.015,duration:.8,ease:'expo.out',scrollTrigger:{trigger:'#wall',start:'top 80%'}});
+// videos: load + play only while on screen, never more than what's visible
+const vio=new IntersectionObserver(es=>es.forEach(({target:v,isIntersecting:on})=>{if(on){if(!v.src)v.src=v.dataset.src;v.play().catch(()=>{})}else v.pause()}),{threshold:.25});
+$$('video[data-src]').forEach(v=>{if(v.offsetParent)vio.observe(v)});
+// reveals
+const rio=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');rio.unobserve(e.target)}}),{rootMargin:'0px 0px -10% 0px'});
+$$('.rv').forEach(el=>rio.observe(el));
 </script>
 </body>
 </html>
